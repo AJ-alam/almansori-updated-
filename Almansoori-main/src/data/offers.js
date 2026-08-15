@@ -1,0 +1,171 @@
+import { FaStar, FaTooth, FaVial } from "react-icons/fa6";
+
+export const offerCategories = [
+    { id: "all", name: "All Packages", icon: FaStar },
+    { id: "inoffice", name: "In-Office Packages", icon: FaTooth },
+    // { id: "designyourown", name: "Design Your Own", icon: FaBriefcaseMedical },
+    { id: "bloodtest", name: "Blood Test Packages", icon: FaVial },
+];
+
+export const offers = [
+    // ─── IN-OFFICE PACKAGES ───────────────────────────────────────────────────
+    {
+        id: 1,
+        category: "inoffice",
+        title: "Hydrafacial Package",
+        description: "Skin Analysis + Hydrafacial (45 Min) + Dental Professional Cleaning",
+        includes: ["Skin Analysis", "Hydrafacial (45 Min)", "Dental Cleaning"],
+        originalPrice: 80,
+        salePrice: 60,
+        // validFrom: "Today",
+        // validTo: "Limited Time",
+        featured: true,
+        image: "/services/Hydrafacial/hydrafacila_glow.jpg",
+    },
+    {
+        id: 2,
+        category: "inoffice",
+        title: "Glow & Smooth Package",
+        description: "Hydrafacial + Full Body Laser Hair Removal (Without Back & Abdomen)",
+        includes: ["Hydrafacial", "Full Body Laser", "Skin Analysis"],
+        originalPrice: 110,
+        salePrice: 90,
+        // validFrom: "Today",
+        // validTo: "Limited Time",
+        featured: true,
+        image: "/services/Laser/full body without abdomen and back.jpg",
+    },
+    {
+        id: 3,
+        category: "inoffice",
+        title: "Ultimate Radiance Package",
+        description: "Glow & Smooth + Foot Massage + Teeth Whitening",
+        includes: ["Glow & Smooth", "Foot Massage", "Teeth Whitening"],
+        originalPrice: 225,
+        salePrice: 125,
+        // validFrom: "Today",
+        // validTo: "Limited Time",
+        featured: true,
+        image: "/services/Hydrafacial/diamond hydrafacial.jpg",
+    },
+
+    // ─── DESIGN YOUR OWN ─────────────────────────────────────────────────────
+    // Commented out — hidden from Packages page (kept for future use)
+    // {
+    //     id: 9,
+    //     category: "designyourown",
+    //     title: "Design Your Own Package",
+    //     description: "Min 2 Services Required. Mix And Match Individual Services:",
+    //     includes: ["Min 2 Services", "Customized Options", "Flexible Pricing"],
+    //     services: [
+    //         { name: "Dental Professional Cleaning", price: 15 },
+    //         { name: "Hydrafacial Diamond", price: 25 },
+    //         { name: "Hydrafacial Glow", price: 15 },
+    //         { name: "Hydrafacial Premium", price: 45 },
+    //         { name: "Laser Full Body", price: 55 },
+    //         { name: "Tooth Whitening (In-Office)", price: 60 },
+    //         { name: "Tooth Whitening Home Pen Kit", price: 15 }
+    //     ],
+    //     featured: false,
+    // },
+
+    // ─── BLOOD TEST PACKAGES ──────────────────────────────────────────────────
+    {
+        id: 10,
+        category: "bloodtest",
+        title: "Anemia Profile",
+        description: "Comprehensive Anemia Profile Blood Test (20 Tests)",
+        includes: ["20 Tests", "Sample Collection", "Lab Report"],
+        originalPrice: 21,
+        salePrice: 15.5,
+        // validFrom: "Today",
+        // validTo: "Limited Time",
+        featured: false,
+        image: "/services/banners/5.jpeg",
+    },
+    {
+        id: 11,
+        category: "bloodtest",
+        title: "Basic Wellness Package",
+        description: "Essential Wellness Screen Covering 15 Key Indicators",
+        includes: ["15 Tests", "Sample Collection", "Lab Report"],
+        originalPrice: 12,
+        salePrice: 8,
+        // validFrom: "Today",
+        // validTo: "Limited Time",
+        featured: false,
+        image: "/services/banners/5.jpeg",
+    },
+    {
+        id: 12,
+        category: "bloodtest",
+        title: "Female Cancer Marker",
+        description: "Targeted Cancer Screening Panel For Women",
+        includes: ["20 Tests", "Sample Collection", "Lab Report"],
+        originalPrice: 25,
+        salePrice: 17,
+        // validFrom: "Today",
+        // validTo: "Limited Time",
+        featured: true,
+        image: "/services/banners/5.jpeg",
+    },
+    {
+        id: 13,
+        category: "bloodtest",
+        title: "Male Cancer Marker",
+        description: "Targeted Cancer Screening Panel For Men",
+        includes: ["20 Tests", "Sample Collection", "Lab Report"],
+        originalPrice: 20,
+        salePrice: 14,
+        // validFrom: "Today",
+        // validTo: "Limited Time",
+        featured: false,
+        image: "/services/banners/5.jpeg",
+    },
+    {
+        id: 14,
+        category: "bloodtest",
+        title: "Standard Diabetes Package",
+        description: "Complete Diabetes Screening And Monitoring Panel",
+        includes: ["20 Tests", "Sample Collection", "Lab Report"],
+        originalPrice: 20,
+        salePrice: 15,
+        // validFrom: "Today",
+        // validTo: "Limited Time",
+        featured: false,
+        image: "/services/banners/5.jpeg",
+    },
+    {
+        id: 15,
+        category: "bloodtest",
+        title: "Standard Wellness Package",
+        description: "A Comprehensive Health Assessment With 25 Tests",
+        includes: ["25 Tests", "Sample Collection", "Lab Report"],
+        originalPrice: 28,
+        salePrice: 20,
+        // validFrom: "Today",
+        // validTo: "Limited Time",
+        featured: true,
+        image: "/services/banners/5.jpeg",
+    },
+    {
+        id: 16,
+        category: "bloodtest",
+        title: "Woman Hormone Profile",
+        description: "Complete Hormone Assessment Panel For Women",
+        includes: ["15 Tests", "Sample Collection", "Lab Report"],
+        originalPrice: 15,
+        salePrice: 10,
+        // validFrom: "Today",
+        // validTo: "Limited Time",
+        featured: false,
+        image: "/services/banners/5.jpeg",
+    },
+];
+
+export const getFeaturedOffers = () => offers.filter((offer) => offer.featured);
+
+export const getOffersByCategory = (categoryId) => {
+    if (categoryId === "all") return offers;
+    return offers.filter((offer) => offer.category === categoryId);
+};
