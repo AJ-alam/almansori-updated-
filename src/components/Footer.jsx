@@ -1,0 +1,202 @@
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { FaFacebookF, FaInstagram, FaPhone, FaMapMarkerAlt, FaEnvelope, FaClock, FaWhatsapp } from 'react-icons/fa';
+import Brand, { BrandText } from './Brand';
+
+const Footer = () => {
+  const [email, setEmail] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Email submitted:', email);
+    setEmail('');
+  };
+
+  const quickLinks = [
+    { name: 'Home', path: '/' },
+    { name: 'About Us', path: '/about' },
+    { name: 'Services', path: '/services/dental' },
+    { name: 'Contact', path: '/contact' },
+  ];
+
+  const services = [
+    { name: 'Dental Care', path: '/services/dental' },
+    { name: 'Hydrafacial', path: '/services/skincare/hydrafacial' },
+    { name: 'Laser Treatment', path: '/services/skincare/laser-hair-removal' },
+    { name: 'Dermatology', path: '/services/aesthetics/chemical-peeling' },
+    { name: 'RF Treatment', path: '/services/aesthetics/rf-microneedling' },
+  ];
+
+  const socialLinks = [
+    { icon: FaFacebookF, href: 'https://www.facebook.com/almansooridentalcentre/', label: 'Facebook' },
+    { icon: FaInstagram, href: 'https://www.instagram.com/almansoorimedical/?hl=en', label: 'Instagram' },
+  ];
+
+  const mapUrl = 'https://www.bing.com/maps/search?q=Bldg+No+1267%2C+Road+1319%2C+Block+913+-+East+Riffa%2C+Kingdom+Of+Bahrain&cp=26.131527~50.550343&lvl=21';
+
+  return (
+    <footer className="bg-heading text-white relative overflow-hidden">
+      {/* Decorative elements */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+      <div className="absolute bottom-0 left-0 w-80 h-80 bg-white/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+
+      {/* Main Footer Content */}
+      <div className="py-10 md:py-14 px-4 md:px-9 relative z-10">
+        <div className="max-w-7xl mx-auto">
+
+          {/* Links Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-10">
+
+            {/* Brand Column */}
+            <div className="lg:col-span-1">
+              <Link to="/" className="flex items-center gap-3 mb-6 group">
+                <img src="/images/logo_gradient.svg" alt="AlMansoori" className="h-12" />
+                <span className="font-primary text-2xl group-hover:opacity-80 transition-opacity"><Brand /></span>
+              </Link>
+              <p className="text-white/70 leading-relaxed mb-6">
+                Your trusted partner in comprehensive medical and dental care. Creating confident smiles since 1997.
+              </p>
+
+              {/* Social Links */}
+              <div className="flex gap-3">
+                {socialLinks.map((social, index) => {
+                  const Icon = social.icon;
+                  return (
+                    <a
+                      key={index}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={social.label}
+                      className="w-11 h-11 bg-white/10 hover:bg-white rounded-xl flex items-center justify-center transition-all duration-300 group"
+                    >
+                      <Icon className="text-white group-hover:text-heading transition-colors" />
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Quick Links */}
+            <div>
+              <h4 className="font-primary text-xl text-white mb-4">Quick Links</h4>
+              <ul className="space-y-3">
+                {quickLinks.map((link, index) => (
+                  <li key={index}>
+                    <Link
+                      to={link.path}
+                      className="text-white/70 hover:text-white transition-colors block group"
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Services */}
+            <div>
+              <h4 className="font-primary text-xl text-white mb-4">Our Services</h4>
+              <ul className="space-y-3">
+                {services.map((service, index) => (
+                  <li key={index}>
+                    <Link
+                      to={service.path}
+                      className="text-white/70 hover:text-white transition-colors block group"
+                    >
+                      {service.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Contact Info */}
+            <div>
+              <h4 className="font-primary text-xl text-white mb-4">Contact Us</h4>
+              <ul className="space-y-3">
+                <li>
+                  <a href="tel:+97317760666" className="flex items-start gap-4 text-white/70 hover:text-white transition-colors group">
+                    <div className="w-10 h-10 bg-white/10 group-hover:bg-white rounded-xl flex items-center justify-center flex-shrink-0 transition-colors">
+                      <FaPhone className="text-white group-hover:text-heading transition-colors" />
+                    </div>
+                    <div>
+                      <p className="text-white/50 text-sm mb-1">Call Us</p>
+                      <p className="font-medium">+973 1776 0666</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://wa.me/97332221676" target="_blank" rel="noopener noreferrer" className="flex items-start gap-4 text-white/70 hover:text-white transition-colors group">
+                    <div className="w-10 h-10 bg-white/10 group-hover:bg-green-500 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors">
+                      <FaWhatsapp className="text-white group-hover:text-white transition-colors" />
+                    </div>
+                    <div>
+                      <p className="text-white/50 text-sm mb-1">WhatsApp Us</p>
+                      <p className="font-medium">+973 3222 1676</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href={mapUrl} target="_blank" rel="noopener noreferrer" className="flex items-start gap-4 text-white/70 hover:text-white transition-colors group">
+                    <div className="w-10 h-10 bg-white/10 group-hover:bg-white rounded-xl flex items-center justify-center flex-shrink-0 transition-colors">
+                      <FaMapMarkerAlt className="text-white group-hover:text-heading transition-colors" />
+                    </div>
+                    <div>
+                      <p className="text-white/50 text-sm mb-1">Visit Us</p>
+                      <p className="font-medium">Bldg 1267, Road 1319, Block 913 - East Riffa, Kingdom Of Bahrain</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="mailto:info@almansoorimedical.bh" className="flex items-start gap-4 text-white/70 hover:text-white transition-colors group">
+                    <div className="w-10 h-10 bg-white/10 group-hover:bg-white rounded-xl flex items-center justify-center flex-shrink-0 transition-colors">
+                      <FaEnvelope className="text-white group-hover:text-heading transition-colors" />
+                    </div>
+                    <div>
+                      <p className="text-white/50 text-sm mb-1">Email Us</p>
+                      <p className="font-medium">info@almansoorimedical.bh</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <div className="flex items-start gap-4 text-white/70">
+                    <div className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <FaClock className="text-white" />
+                    </div>
+                    <div>
+                      <p className="text-white/50 text-sm mb-1">Working Hours</p>
+                      <p className="font-medium">9AM - 7PM</p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Bottom Bar */}
+          <div className="pt-6 border-t border-white/10">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+              <p className="text-white/50 text-sm text-center md:text-left">
+                © 2025 <BrandText>AlMansoori</BrandText> Medical. All Rights Reserved.
+              </p>
+              <div className="flex flex-wrap justify-center gap-6">
+                <Link to="/privacy" className="text-white/50 hover:text-white text-sm transition-colors">
+                  Privacy Policy
+                </Link>
+                <Link to="/terms" className="text-white/50 hover:text-white text-sm transition-colors">
+                  Terms of Service
+                </Link>
+                <Link to="/sitemap" className="text-white/50 hover:text-white text-sm transition-colors">
+                  Sitemap
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
