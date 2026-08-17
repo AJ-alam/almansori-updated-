@@ -43,22 +43,18 @@ const Discover = () => {
     <section className="w-full py-10 md:py-14 px-4 md:px-9 bg-white">
       {/* Section Header */}
       <div className="text-center mb-10">
-        <span className="text-heading font-semibold tracking-widest uppercase text-sm">Our Team</span>
-        <h2 className="section-heading mt-3 mb-4 whitespace-normal md:whitespace-nowrap">Meet The Owners</h2>
-        <p className="text-body max-w-xl mx-auto">
-          Decades of medical excellence combined with a holistic approach to your Well-Being.
-        </p>
+        <h2 className="section-heading mb-4">Meet The Owners</h2>
       </div>
 
       {/* Doctors - Stacked Layout */}
-      <div className="space-y-12 max-w-6xl mx-auto">
+      <div className="space-y-14 max-w-6xl mx-auto">
         {doctors.map((doc, idx) => (
           <div
             key={idx}
             className={`flex flex-col ${idx % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 lg:gap-14 items-center`}
           >
             {/* Image */}
-            <div className="w-full lg:w-2/5">
+            <div className="w-full max-w-md lg:max-w-none lg:w-2/5 mx-auto">
               <div className="relative">
                 {/* Decorative background - using gray tones */}
                 <div className={`absolute -inset-4 bg-gray-200 rounded-[2rem] ${idx % 2 === 0 ? 'rotate-3' : '-rotate-3'}`}></div>
@@ -82,7 +78,7 @@ const Discover = () => {
                 <span className="inline-block bg-gray-100 text-heading px-4 py-1.5 rounded-full text-sm font-medium mb-3">
                   {doc.title}
                 </span>
-                <h3 className="font-primary text-3xl md:text-4xl lg:text-5xl text-heading whitespace-normal md:whitespace-nowrap">
+                <h3 className="font-primary text-3xl md:text-4xl lg:text-5xl text-heading leading-tight">
                   <BrandText>{doc.name}</BrandText>
                 </h3>
                 <p className="text-body font-medium mt-2">{doc.credentials}</p>

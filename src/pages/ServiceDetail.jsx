@@ -105,44 +105,13 @@ const ServiceDetail = () => {
                         </div>
                     </div>
 
-                    {/* Sub-Services Grid (only show on main service page) */}
-                    {!subService && service.subServices && service.subServices.length > 0 && (
-                        <div className="mb-16">
-                            <h2 className="font-primary text-2xl md:text-3xl text-heading mb-8 text-center whitespace-normal md:whitespace-nowrap">
-                                Our {service.title} Treatments
-                            </h2>
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 items-stretch">
-                                {service.subServices.map((sub, index) => {
-                                    const SubServiceIcon = sub.icon;
-                                    return (
-                                        <Link
-                                            key={index}
-                                            to={`/services/${service.slug}/${sub.slug}`}
-                                            className="bg-white border border-gray-200/80 rounded-3xl p-6 hover:shadow-xl hover:border-heading transition-all duration-300 group flex flex-col justify-between h-full"
-                                        >
-                                            <div>
-                                                <div className="w-12 h-12 bg-gray-100 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-heading group-hover:text-white transition-colors duration-300">
-                                                    <SubServiceIcon className="text-2xl text-heading group-hover:text-white transition-colors" />
-                                                </div>
-                                                <h3 className="font-primary text-lg text-heading mb-2 font-bold min-h-[2.5rem]">
-                                                    {sub.name}
-                                                </h3>
-                                            </div>
-                                            <ExpandableText text={sub.description} />
-                                        </Link>
-                                    );
-                                })}
-                            </div>
-                        </div>
-                    )}
-
-                    {/* Treatments & Pricing Section (sub-service pages only) */}
+                    {/* Treatments Section (sub-service specific treatments) */}
                     {subService && displayTreatments && displayTreatments.length > 0 && (
                         <div className="mb-16">
                             <h2 className="font-primary text-2xl md:text-3xl text-heading mb-8 text-center whitespace-normal md:whitespace-nowrap">
-                                Treatments &amp; Pricing
+                                Treatments
                             </h2>
-                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+                            <div className={`grid gap-6 items-stretch ${displayTreatments.length === 2 ? 'grid-cols-1 sm:grid-cols-2' : displayTreatments.length === 3 ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4'}`}>
                                 {displayTreatments.map((treatment, index) => {
                                     const treatmentId = treatment.name.toLowerCase().includes("fed") 
                                         ? "fed" 
@@ -197,35 +166,38 @@ const ServiceDetail = () => {
                         </div>
                     )}
 
-                    {/* Related Sub-Services (on sub-service page) */}
-                    {subService && service.subServices && service.subServices.length > 1 && (
+                    {/* All Sub-Services Section - Compact Grid visible at a glance */}
+                    {service.subServices && service.subServices.length > 0 && (
                         <div className="mb-16">
-                            <h2 className="font-primary text-2xl md:text-3xl text-heading mb-8 text-center whitespace-normal md:whitespace-nowrap">
-                                Other {service.title} Treatments
+                            <h2 className="font-primary text-2xl md:text-3xl text-heading mb-6 text-center whitespace-normal md:whitespace-nowrap">
+                                Treatments
                             </h2>
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
-                                {service.subServices
-                                    .filter(sub => sub.slug !== subSlug)
-                                    .slice(0, 4)
-                                    .map((sub, index) => {
-                                        const RelatedIcon = sub.icon;
-                                        return (
-                                            <Link
-                                                key={index}
-                                                to={`/services/${service.slug}/${sub.slug}`}
-                                                className="bg-white border border-gray-200/80 rounded-3xl p-6 hover:shadow-xl hover:border-heading transition-all duration-300 group flex flex-col justify-between h-full"
-                                            >
-                                                <div>
-                                                    <div className="w-12 h-12 bg-gray-100 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-heading group-hover:text-white transition-colors duration-300">
-                                                        <RelatedIcon className="text-2xl text-heading group-hover:text-white transition-colors" />
-                                                    </div>
-                                                    <h3 className="font-primary text-base font-bold text-heading">
-                                                        {sub.name}
-                                                    </h3>
+                            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3.5">
+                                {service.subServices.map((sub, index) => {
+                                    const SubServiceIcon = sub.icon;
+                                    const isCurrent = sub.slug === subSlug;
+                                    return (
+                                        <Link
+                                            key={index}
+                                            to={`/services/${service.slug}/${sub.slug}`}
+                                            className={`bg-white border ${isCurrent ? 'border-heading ring-2 ring-heading shadow-md' : 'border-gray-200/80'} rounded-2xl p-4 hover:shadow-lg hover:border-heading transition-all duration-300 group flex flex-col justify-between h-full`}
+                                        >
+                                            <div>
+                                                <div className="w-10 h-10 bg-gray-100 rounded-xl flex items-center justify-center mb-3 group-hover:bg-heading group-hover:text-white transition-colors duration-300">
+                                                    <SubServiceIcon className="text-xl text-heading group-hover:text-white transition-colors" />
                                                 </div>
-                                            </Link>
-                                        );
-                                    })}
+                                                <h3 className="font-primary text-base font-bold text-heading leading-tight mb-1.5 group-hover:text-brand-primary transition-colors">
+                                                    {sub.name}
+                                                </h3>
+                                            </div>
+                                            {sub.description && (
+                                                <p className="text-gray-500 text-xs leading-relaxed line-clamp-2 mt-1">
+                                                    {sub.description}
+                                                </p>
+                                            )}
+                                        </Link>
+                                    );
+                                })}
                             </div>
                         </div>
                     )}

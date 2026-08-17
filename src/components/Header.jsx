@@ -14,7 +14,7 @@ const Header = () => {
   const activeService = services[activeServiceIndex];
 
   return (
-    <header className="w-full fixed top-0 left-0 z-50 px-4 md:px-6 pt-2 md:pt-3">
+    <header className="w-full absolute top-0 left-0 z-50 px-4 md:px-6 pt-2 md:pt-3">
       {/* Floating rounded container - Clean white with subtle shadow */}
       <div className="bg-white backdrop-blur-sm rounded-2xl md:rounded-full shadow-xl border border-gray-200/50">
         {/* Main header row */}

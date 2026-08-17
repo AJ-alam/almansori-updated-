@@ -40,11 +40,6 @@ export const visionMissionValues = {
             title: "Beauty & Well-being",
             icon: FaLeaf,
             description: "We are committed to enhancing both the health and natural beauty of our patients, promoting confidence and quality of life."
-        },
-        {
-            title: "Continuous Improvement",
-            icon: FaGlobe,
-            description: "We foster learning, development, and innovation to continually improve patient care."
         }
     ]
 };
