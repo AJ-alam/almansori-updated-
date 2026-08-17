@@ -54,12 +54,6 @@ const VMVSection = () => {
                                 <p className="text-sm md:text-base leading-relaxed text-white/85">
                                     {p.content}
                                 </p>
-
-                                <div className="mt-6 flex items-center gap-3 text-white/50 transition-colors duration-300 group-hover:text-white">
-                                    <span className="text-xs font-semibold uppercase tracking-widest">
-                                        {p.key === "vision" ? "Looking Ahead" : "In Practice"}
-                                    </span>
-                                </div>
                             </div>
                         </article>
                     ))}
@@ -74,7 +68,7 @@ const VMVSection = () => {
                         <div className="h-1 w-24 rounded-full bg-[#F9B70A] md:mb-3" />
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
                         {values.map((v, i) => (
                             <div
                                 key={i}
