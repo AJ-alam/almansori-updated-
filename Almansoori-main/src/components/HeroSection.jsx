@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import image from "../assets/FSR_9780.jpg";
+import image from "../assets/FSR_9780.JPG";
 import { BrandText } from "./Brand";
 
 
