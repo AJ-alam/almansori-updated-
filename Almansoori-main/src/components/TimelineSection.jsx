@@ -35,7 +35,7 @@ const TimelineSection = () => {
       title: "Almansoori Medical",
       image: t4,
       story:
-        "The Dental Centre grew into AlMansoori Medical, providing dental and medical services including ENT, Derma, laser and Psychotherapy. All integrated as a preventive holistic treatment for clients. The success owes to the total dedication of management led by Dr. Aysha AlMansoori and a highly qualified professional staff.",
+        "The Dental Centre grew into almansoori Medical, providing dental and medical services including ENT, Derma, laser and Psychotherapy. All integrated as a preventive holistic treatment for clients. The success owes to the total dedication of management led by Dr. Aysha almansoori and a highly qualified professional staff.",
     },
   ];
 

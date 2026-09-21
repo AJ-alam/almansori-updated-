@@ -4,7 +4,7 @@ import { FaHeart, FaUsers, FaHandHoldingMedical, FaLeaf, FaGraduationCap, FaHand
 export const visionMissionValues = {
     vision: {
         title: "Vision",
-        content: "To provide a complete facial health, beauty and wellbeing under one roof."
+        content: "To be the premier destination for complete facial health, beauty, and holistic well-being, recognized for setting new standards in multidisciplinary patient care, innovative medical-dental integration, and transformative aesthetic excellence under one roof."
     },
     mission: {
         title: "Mission",

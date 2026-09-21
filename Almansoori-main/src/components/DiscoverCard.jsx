@@ -5,8 +5,8 @@ const DiscoverCard = ({ icon: Icon, title, desc, bgColor }) => {
     <div className={`w-full ${bgColor} p-4 rounded-lg flex flex-col`}>
       <Icon className="mb-8 text-4xl text-brand-primary" />
       <div>
-        <h4 className="font-primary text-xl 2xl:text-2xl text-brand-primary-950">{title}</h4>
-        <p className="">{desc}</p>
+        <h4 className="font-primary text-lg md:text-xl font-bold leading-snug text-brand-primary-950 mb-1">{title}</h4>
+        <p className="font-secondary-500 text-sm md:text-base leading-relaxed text-body">{desc}</p>
       </div>
     </div>
   );

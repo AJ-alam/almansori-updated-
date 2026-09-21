@@ -39,14 +39,14 @@ const CommunityCard = ({ card }) => {
 
     return (
         <div className={`flex flex-col h-full p-8 rounded-[2rem] border shadow-xl shadow-gray-200/40 transition-all duration-300 hover:-translate-y-2 group ${t.card}`}>
-            <h3 className={`font-primary text-2xl mb-4 font-bold ${t.title}`}>{card.title}</h3>
+            <h3 className={`font-primary text-2xl md:text-3xl mb-4 font-bold leading-tight ${t.title}`}>{card.title}</h3>
 
-            <p className={`leading-relaxed ${t.body}`}>{card.intro}</p>
+            <p className={`text-sm md:text-base leading-relaxed ${t.body}`}>{card.intro}</p>
 
             {card.points.length > 0 && (
                 <ul className="mt-4 space-y-2">
                     {card.points.map((p, i) => (
-                        <li key={i} className={`text-base font-medium ${t.body}`}>
+                        <li key={i} className={`text-sm md:text-base font-medium leading-relaxed ${t.body}`}>
                             {p}
                         </li>
                     ))}
@@ -54,7 +54,7 @@ const CommunityCard = ({ card }) => {
             )}
 
             {card.more && (
-                <p className={`mt-3 leading-relaxed ${t.body}`}>{card.more}</p>
+                <p className={`mt-3 text-sm md:text-base leading-relaxed ${t.body}`}>{card.more}</p>
             )}
         </div>
     );
@@ -67,16 +67,12 @@ const CommunityServiceSection = () => {
             <div className="absolute top-0 right-0 w-96 h-96 bg-brand-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand-accent/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
 
-            <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
+            <div className="max-w-7xl mx-auto px-6 md:px-10 relative z-10">
                 {/* Heading */}
-                <div className="max-w-none mb-8">
-                    <h2 className="font-primary text-2xl sm:text-4xl md:text-5xl text-heading mb-4 leading-tight whitespace-normal md:whitespace-nowrap">
+                <div className="text-center mb-8 md:mb-12">
+                    <h2 className="font-primary text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-heading leading-tight font-bold">
                         Our Contribution To The Community
                     </h2>
-                    <p className="text-gray-600 text-lg leading-relaxed max-w-2xl">
-                        Our commitment goes beyond our clinic walls. We actively engage with the community to
-                        promote health and wellness for all, creating a healthier society together.
-                    </p>
                 </div>
 
                 {/* Equal Boxes */}

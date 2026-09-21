@@ -56,7 +56,7 @@ const ProcessSection = () => {
         </div>
 
         {/* Process Cards - Modern Design */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center max-w-5xl mx-auto">
           {processes.map((process, index) => {
             const Icon = process.icon;
             const isActive = activeIndex === index;
@@ -101,7 +101,7 @@ const ProcessSection = () => {
                     </h3>
 
                     {/* Description */}
-                    <p className={`leading-relaxed transition-colors duration-500 ${isActive ? 'text-white/90' : 'text-body'
+                    <p className={`text-sm md:text-base leading-relaxed transition-colors duration-500 ${isActive ? 'text-white/90' : 'text-body'
                       }`}>
                       {process.description}
                     </p>

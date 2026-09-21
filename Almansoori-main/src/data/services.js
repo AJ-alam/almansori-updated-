@@ -21,6 +21,42 @@ export const services = [
     description: "Complete dental care including smile makeover, implants, veneers, teeth whitening, and more.",
     subServices: [
       {
+        name: "Face Enhancement Dentistry",
+        slug: "face-enhancement-dentistry",
+        icon: RiUserSmileLine,
+        image: "/services/Dental/face_enhancement_dentistry.jpg",
+        description: "A technique combining dentistry and aesthetics to look 10 years younger",
+        fullDescription: "Face Enhancement Dentistry (FED) is a pioneering holistic approach that combines neuromuscular orthodontics, restorative dentistry, and facial aesthetics to enhance your face and smile together. Developed by Dr. Aysha almansoori, this innovative non-surgical dental facelift restores lost facial volume, delays the onset of wrinkles in the lower third of the face, and creates a harmonious, youthful appearance. Through digital smile design, bite reconstruction, and specialized veneers, FED rejuvenates facial features while improving bite function and oral health.",
+        treatments: [
+          {
+            name: "Digital Smile Architecture & Facial Analysis",
+            description: "A comprehensive 3D diagnostic evaluation assessing the harmony between your facial muscles, jaw alignment, lip dynamics, and tooth proportions. Using state-of-the-art digital imaging, Dr. Aysha almansoori maps out a customized roadmap to restore lost vertical dimension and facial balance.\n\nTo discover how Face Enhancement Dentistry can revitalize your smile and facial appearance, call 17760666 and schedule your personalized cosmetic consultation today."
+          },
+          {
+            name: "Non-Surgical Dental Face Lift",
+            description: "As teeth wear down naturally over time, the lower third of the face can lose height and structural support, leading to premature wrinkles and sagging around the mouth. This non-surgical procedure re-establishes optimal tooth length and lip fullness, naturally elevating facial proportions and softening folds without surgical intervention."
+          },
+          {
+            name: "Neuromuscular Bite Reconstruction",
+            description: "State-of-the-art bite realignment that balances jaw muscles, relieves TMJ strain, and establishes the optimal jaw position for both comfortable chewing and harmonious facial aesthetic rejuvenation."
+          },
+          {
+            name: "Bespoke Aesthetic Restorations & Veneers",
+            description: "Custom ultra-thin porcelain veneers and ceramic restorations engineered with digital precision to complement your unique facial structure, lip contour, and natural smile line."
+          }
+        ],
+        faqs: [
+          {
+            q: "What is Face Enhancement Dentistry (FED)?",
+            a: "Face Enhancement Dentistry is a specialized, non-surgical treatment combining aesthetic dentistry and neuromuscular principles to restore facial height and youthful contours while rejuvenating your smile."
+          },
+          {
+            q: "Who is a candidate for Face Enhancement Dentistry?",
+            a: "Anyone experiencing worn down teeth, collapsed bite, deep facial lines in the lower face, or those desiring a youthful facial lift without invasive surgical procedures."
+          }
+        ]
+      },
+      {
         name: "Aesthetic Dentistry",
         slug: "aesthetic-dentistry",
         icon: RiUserSmileLine,
@@ -29,7 +65,7 @@ export const services = [
         treatments: [
           {
             name: "Smile Makeover",
-            description: "You deserve to shine, and a smile makeover is sure to do the trick! A Smile Makeover is a treatment plan that considers the dental and oral health, as well as the surrounding smile elements such as the thickness, color, level and contour of the lips, and the relationship between the upper and the lower teeth and jaws in order to craft the perfect smile for you.\n\nA Smile Makeover may include a number of procedures designed to enhance the beauty and appearance of your smile. These may include the straightening and repairing of crooked or chipped teeth through orthodontics, replacing of missing teeth with crowns and bridges, closing gaps between teeth with cosmetic fillings, re-contouring gummy smiles and teeth whitening, as well as Ceramic Facings or veneers. There are a wide number of treatment options to makeover your smile so visit AlMansoori Medical for a Cosmetic Consultation and let’s find the right one for you!"
+            description: "You deserve to shine, and a smile makeover is sure to do the trick! A Smile Makeover is a treatment plan that considers the dental and oral health, as well as the surrounding smile elements such as the thickness, color, level and contour of the lips, and the relationship between the upper and the lower teeth and jaws in order to craft the perfect smile for you.\n\nA Smile Makeover may include a number of procedures designed to enhance the beauty and appearance of your smile. These may include the straightening and repairing of crooked or chipped teeth through orthodontics, replacing of missing teeth with crowns and bridges, closing gaps between teeth with cosmetic fillings, re-contouring gummy smiles and teeth whitening, as well as Ceramic Facings or veneers. There are a wide number of treatment options to makeover your smile so visit almansoori Medical for a Cosmetic Consultation and let’s find the right one for you!"
           },
           {
             name: "Face Enhancement Dentistry",
@@ -100,14 +136,14 @@ export const services = [
         slug: "dental-implants",
         icon: TbDental,
         description: "Advanced Digital Technologies For Implant Placement",
-        fullDescription: "AL MANSOORI Medical is equipped with the latest digital technologies for dental implant placement.\n\nAn implant is an artificial tooth that is placed inside the jaw to replace a missing tooth or to support a bridge or a denture, over which a prosthetic tooth is placed. At AL MANSOORI Medical we use the preoperative planning software to accurately plan and guide the placement of dental implants, safely complete your implant procedure in one visit."
+        fullDescription: "almansoori Medical is equipped with the latest digital technologies for dental implant placement.\n\nAn implant is an artificial tooth that is placed inside the jaw to replace a missing tooth or to support a bridge or a denture, over which a prosthetic tooth is placed. At almansoori Medical we use the preoperative planning software to accurately plan and guide the placement of dental implants, safely complete your implant procedure in one visit."
       },
       {
         name: "Laser Dental Treatment",
         slug: "laser-dental-treatment",
         icon: GiLaserWarning,
         description: "Facilitate Treatments And Make Them Less Traumatic",
-        fullDescription: "The key to great teeth and a beautiful smile starts with healthy gums. At AL MANSOORI Medical we offer periodontal procedures such as Gum Re-contouring and scalloping in order to treat gum bleeding and infection and enhance you overall oral health.\n\nLaser has entered most fields of dentist and made it more simple and less traumatic. Laser is a tool used by the dentist to facilitate treatments such as root canal treatment, cosmetic, surgery, gum treatment, tooth whitening and fillings. Gum reconnoitring with laser is usually required to give what is known as the pink aesthetics after orthodontic treatment and for smile makeover. It is s one visit procedure.\n\nLasers are transforming dental treatments by offering precise, minimally invasive alternatives to traditional methods. In procedures such as gum reshaping, cavity removal, and teeth whitening, lasers provide enhanced accuracy, reducing discomfort and recovery time. They effectively target specific tissues while preserving surrounding areas, leading to less bleeding and a lower risk of infection. Additionally, laser technology can promote faster healing and improved outcomes for patients. By incorporating lasers into our practice, we aim to enhance your dental experience, ensuring efficient treatments with optimal results for your smile.",
+        fullDescription: "The key to great teeth and a beautiful smile starts with healthy gums. At almansoori Medical we offer periodontal procedures such as Gum Re-contouring and scalloping in order to treat gum bleeding and infection and enhance you overall oral health.\n\nLaser has entered most fields of dentist and made it more simple and less traumatic. Laser is a tool used by the dentist to facilitate treatments such as root canal treatment, cosmetic, surgery, gum treatment, tooth whitening and fillings. Gum reconnoitring with laser is usually required to give what is known as the pink aesthetics after orthodontic treatment and for smile makeover. It is s one visit procedure.\n\nLasers are transforming dental treatments by offering precise, minimally invasive alternatives to traditional methods. In procedures such as gum reshaping, cavity removal, and teeth whitening, lasers provide enhanced accuracy, reducing discomfort and recovery time. They effectively target specific tissues while preserving surrounding areas, leading to less bleeding and a lower risk of infection. Additionally, laser technology can promote faster healing and improved outcomes for patients. By incorporating lasers into our practice, we aim to enhance your dental experience, ensuring efficient treatments with optimal results for your smile.",
         treatments: [
           {
             name: "Tooth Lengthening",
@@ -144,11 +180,11 @@ export const services = [
         treatments: [
           {
             name: "Dentures",
-            description: "Dentures are plates of artificial teeth that are used to replace lost teeth. Patients may need a complete set of dentures or a partial denture when some of the teeth are missing. Dentures are made out of either hard acrylic or softer, more flexible materials and AL MANSOORI Medical will help you choose the right denture that is most appropriate and comfortable for you."
+            description: "Dentures are plates of artificial teeth that are used to replace lost teeth. Patients may need a complete set of dentures or a partial denture when some of the teeth are missing. Dentures are made out of either hard acrylic or softer, more flexible materials and almansoori Medical will help you choose the right denture that is most appropriate and comfortable for you."
           },
           {
             name: "Crowns & Bridges",
-            description: "Crowns and Bridges are fixed prosthetics that are used to cover a Root Canal treated tooth or badly broken tooth or used to replace missing teeth. There are a number of different types of Crowns and Bridges to choose from and AL MANSOORI Medical will help you choose the best option for you."
+            description: "Crowns and Bridges are fixed prosthetics that are used to cover a Root Canal treated tooth or badly broken tooth or used to replace missing teeth. There are a number of different types of Crowns and Bridges to choose from and almansoori Medical will help you choose the best option for you."
           },
           {
             name: "Inlay & Onlay",
@@ -156,7 +192,7 @@ export const services = [
           },
           {
             name: "Implants",
-            description: "An implant is an artificial tooth that is placed inside the jaw to replace a missing tooth or to support a bridge or a denture, over which a prosthetic tooth is placed. At AL MANSOORI Medical we use the preoperative planning software to accurately plan and guide the placement of Straumann ITI dental implants in multiple implant cases. A full diagnosis and treatment plan is agreed with you and a suitable type and size of implant is selected. Our state of the art implantology technology allows AL MANSOORI Medical to safely complete your implant procedure in one visit."
+            description: "An implant is an artificial tooth that is placed inside the jaw to replace a missing tooth or to support a bridge or a denture, over which a prosthetic tooth is placed. At almansoori Medical we use the preoperative planning software to accurately plan and guide the placement of Straumann ITI dental implants in multiple implant cases. A full diagnosis and treatment plan is agreed with you and a suitable type and size of implant is selected. Our state of the art implantology technology allows almansoori Medical to safely complete your implant procedure in one visit."
           }
         ]
       },
@@ -165,7 +201,7 @@ export const services = [
         slug: "gum-treatment",
         icon: GiToothbrush,
         description: "Maintain Healthy Gums For A Beautiful Smile",
-        fullDescription: "The key to great teeth and a beautiful smile starts with healthy gums. At AL MANSOORI Medical we offer periodontal procedures such as gum re-contouring and scaling in order to treat gum bleeding and infection and enhance your overall health.",
+        fullDescription: "The key to great teeth and a beautiful smile starts with healthy gums. At almansoori Medical we offer periodontal procedures such as gum re-contouring and scaling in order to treat gum bleeding and infection and enhance your overall health.",
         treatments: [
           {
             name: "Scaling",
@@ -173,7 +209,7 @@ export const services = [
           },
           {
             name: "Polishing",
-            description: "Great for smokers and coffee and tea drinkers, AL MANSOORI Medical Polishing treatment removes stains as well as smoothens the surface of the teeth in order to reduce future staining."
+            description: "Great for smokers and coffee and tea drinkers, almansoori Medical Polishing treatment removes stains as well as smoothens the surface of the teeth in order to reduce future staining."
           },
           {
             name: "Laser Periodontal Therapy & Curettage",
@@ -194,23 +230,23 @@ export const services = [
         slug: "elderly-oral-and-dental-care",
         icon: MdElderly,
         description: "Maintain Good Oral Health And Hygiene For The Elderly",
-        fullDescription: "It is extremely important both for the emotional and physical health and well being of the elderly to maintain good oral health and hygiene. AL MANSOORI DENTAL CENTRE is experienced in working with the elderly to construct and replace missing teeth with Crowns and Bridges, Dentures and Implants and giving our more senior patients plenty of reasons to smile!",
+        fullDescription: "It is extremely important both for the emotional and physical health and well being of the elderly to maintain good oral health and hygiene. almansoori DENTAL CENTRE is experienced in working with the elderly to construct and replace missing teeth with Crowns and Bridges, Dentures and Implants and giving our more senior patients plenty of reasons to smile!",
         treatments: [
           {
-            name: "Dentures",
-            description: "Dentures are plates of artificial teeth that are used to replace lost teeth. Patients may need a complete set of dentures or a partial denture when some of the teeth are missing. Dentures are made out of either hard acrylic or softer, more flexible materials and AL MANSOORI DENTAL CENTRE will help you choose the right denture that is most appropriate and comfortable for you."
+            name: "Custom Senior Dentures",
+            description: "Custom-crafted complete and partial dentures engineered with premium soft-liner materials for optimal comfort, secure fit, and effortless speech and chewing."
           },
           {
-            name: "Crowns & Bridges",
-            description: "Crowns and Bridges are fixed prosthetics that are used to cover a Root Canal treated tooth or badly broken tooth or used to replace missing teeth. There are a number of different types of Crowns and Bridges to choose from and AL MANSOORI DENTAL CENTRE will help you choose the best option for you."
+            name: "Crowns & Bridges for Seniors",
+            description: "Fixed, biocompatible restorations designed to reinforce compromised teeth, restore proper bite height, and seamlessly replace missing teeth with long-lasting durability."
           },
           {
-            name: "Inlay & Onlay",
-            description: "Inlay and onlays are prosthetics that are made from composite or porcelain, and are indirectly bonded to the tooth. Inlay and onlays are prescribed when a patient has a tooth that is partial damaged but not to the extent that it requires a Crown. The Inlay is bonded inside the tooth where as the Onlay is bonded inside and around the tooth and is supported by the existing tooth’s structure."
+            name: "Gentle Restorative Care",
+            description: "Targeted, comfortable treatments designed to treat root sensitivity, manage enamel wear, and preserve natural teeth with minimal chair time and stress."
           },
           {
-            name: "Implants",
-            description: "An implant is an artificial tooth that is placed inside the jaw to replace a missing tooth or to support a bridge or a denture, over which a prosthetic tooth is placed. At AL MANSOORI Medical we use the preoperative planning software to accurately plan and guide the placement of Straumann ITI dental implants in multiple implant cases. A full diagnosis and treatment plan is agreed with you and a suitable type and size of implant is selected. Our state of the art implantology technology allows AL MANSOORI Medical to safely complete your implant procedure in one visit."
+            name: "Implant-Supported Dentures",
+            description: "Minimally invasive implant solutions providing rock-solid stability for loose dentures, allowing senior patients to eat their favorite foods and smile with total confidence."
           }
         ]
       },
@@ -219,7 +255,7 @@ export const services = [
         slug: "children-oral-and-dental-care",
         icon: FaChild,
         description: "Dedicated To Your Child’s Oral Health And Happiness",
-        fullDescription: "AL MANSOORI DENTAL CENTER is dedicated to your child’s oral health and happiness. Our team of friendly and caring specialists is experienced working with children and will help make your trip to the dentist a positive experience for you and your child. When you bring your child in for a check up we will calm their dental fears, and advise you on the best treatment options and preventative measures that will ensure your child’s good oral health now and in the future.",
+        fullDescription: "almansoori DENTAL CENTER is dedicated to your child’s oral health and happiness. Our team of friendly and caring specialists is experienced working with children and will help make your trip to the dentist a positive experience for you and your child. When you bring your child in for a check up we will calm their dental fears, and advise you on the best treatment options and preventative measures that will ensure your child’s good oral health now and in the future.",
         treatments: [
           {
             name: "Fillings",
@@ -235,7 +271,7 @@ export const services = [
           },
           {
             name: "Space Maintainer",
-            description: "Children sometimes lose their teeth early and adjacent teeth may move into the space before the new permanent tooth erupts. A Space Maintainer is a custom made appliance made by the dentist that aims to maintain the space for the permanent tooth until it comes through. Although AL MANSOORI Medical highly recommends delaying the extraction of baby teeth if this is unavoidable then a space maintainer is vital."
+            description: "Children sometimes lose their teeth early and adjacent teeth may move into the space before the new permanent tooth erupts. A Space Maintainer is a custom made appliance made by the dentist that aims to maintain the space for the permanent tooth until it comes through. Although almansoori Medical highly recommends delaying the extraction of baby teeth if this is unavoidable then a space maintainer is vital."
           },
           {
             name: "Myobrace",
@@ -309,32 +345,32 @@ export const services = [
         treatments: [
           {
             name: "General Consultation",
-            description: "A general consultation at AL MANSOORI Medical will provide you with an overall assessment of you or your child’s oral health and treatment options. Regular dental check-ups for you and your child will assist with the early identification and management of your oral issues while encouraging healthy oral hygiene practices. Call 17760666 to book your consultation today."
+            description: "A general consultation at almansoori Medical will provide you with an overall assessment of you or your child’s oral health and treatment options. Regular dental check-ups for you and your child will assist with the early identification and management of your oral issues while encouraging healthy oral hygiene practices. Call 17760666 to book your consultation today."
           },
           {
             name: "Orthodontic Consultation",
-            description: "If you are not happy with the alignment of your teeth orthodontics may be the solution for you. An Orthodontic Consultation at AL MANSOORI Medical will assess you or your child’s need for orthodontic treatments including Braces, Invisalign, Myobrace or Functional Orthodontic Appliances. If your child has signs of crowding or spacing, a consultation with the Orthodontist can guide you to the proper timing and the best method of orthodontic treatment. Call 17760666 to book your consultation today."
+            description: "If you are not happy with the alignment of your teeth orthodontics may be the solution for you. An Orthodontic Consultation at almansoori Medical will assess you or your child’s need for orthodontic treatments including Braces, Invisalign, Myobrace or Functional Orthodontic Appliances. If your child has signs of crowding or spacing, a consultation with the Orthodontist can guide you to the proper timing and the best method of orthodontic treatment. Call 17760666 to book your consultation today."
           },
           {
             name: "Cosmetic Consultation",
-            description: "Visit AL MANSOORI Medical for a cosmetic consultation and explore how we can create your perfect smile. Explore the possibilities with our Aesthetic Specialist who will guide you through all your options and help you imagine a new you. Call 17760666 to book your consultation today."
+            description: "Visit almansoori Medical for a cosmetic consultation and explore how we can create your perfect smile. Explore the possibilities with our Aesthetic Specialist who will guide you through all your options and help you imagine a new you. Call 17760666 to book your consultation today."
           },
           {
             name: "Prosthetic Consultation",
-            description: "Missing teeth not only affect your self-confidence and your smile, they can also create an imbalance, and reduce the durability of your existing teeth. Visit AL MANSOORI Medical for a Prosthetic Consultation today to discuss treatment options available for restoring and replacing your damaged or missing teeth."
+            description: "Missing teeth not only affect your self-confidence and your smile, they can also create an imbalance, and reduce the durability of your existing teeth. Visit almansoori Medical for a Prosthetic Consultation today to discuss treatment options available for restoring and replacing your damaged or missing teeth."
           },
           {
             name: "X-Ray",
-            description: "At AL MANSOORI DENTAL CENTER we use the latest x-ray machines to provide you with the full picture. An X- Ray will ensure a definite diagnosis and help us create a treatment plan that is just right for your unique case."
+            description: "At almansoori DENTAL CENTER we use the latest x-ray machines to provide you with the full picture. An X- Ray will ensure a definite diagnosis and help us create a treatment plan that is just right for your unique case."
           },
           {
             name: "Emergency and Pain",
-            description: "Pain in your teeth could be due to several causes. It might be related to your teeth or your gums. It could also be related to a previous treatment or jaw problem. sometimes it is difficult for you to decide the cause or the origin of the pain. At AL MANSOORI Medical a thorough consultation can help proper diagnosis and treatment of the pain.\n\nTrauma to your teeth can cause tooth fracture, lip cut or even bleeding. In cases of an emergency you do not need to call, just come to AL MANSOORI Medical and we will be ready to assist you."
+            description: "Pain in your teeth could be due to several causes. It might be related to your teeth or your gums. It could also be related to a previous treatment or jaw problem. sometimes it is difficult for you to decide the cause or the origin of the pain. At almansoori Medical a thorough consultation can help proper diagnosis and treatment of the pain.\n\nTrauma to your teeth can cause tooth fracture, lip cut or even bleeding. In cases of an emergency you do not need to call, just come to almansoori Medical and we will be ready to assist you."
           }
         ]
       }
     ],
-    fullDescription: "Al-Mansoori Medical offers complete dental care solutions. From Smile Makeover and Dental Facelift to Veneers, Teeth Whitening, Implants, Crowns & Bridges, and children's oral care. Our team uses the latest digital technologies and offers dedicated experts experienced in performing a wide range of dental procedures with professionalism and care.",
+    fullDescription: "almansoori Medical offers complete dental care solutions. From Smile Makeover and Dental Facelift to Veneers, Teeth Whitening, Implants, Crowns & Bridges, and children's oral care. Our team uses the latest digital technologies and offers dedicated experts experienced in performing a wide range of dental procedures with professionalism and care.",
     treatmentDetails: {
       what: "Our comprehensive dental services include aesthetic dentistry (smile makeover, veneers, teeth whitening), dental surgery (implants, wisdom tooth extraction), prosthetics (crowns, bridges, dentures), gum treatment, and specialized care for children and elderly patients.",
       aim: "To provide exceptional dental care that enhances your smile, restores oral health, and maintains long-term dental wellness. We aim to give you a beautiful, healthy smile that boosts your confidence.",
@@ -584,7 +620,7 @@ export const services = [
         fullDescription: "Sleep apnea is a common sleep disorder characterized by interrupted breathing during sleep, leading to poor rest and various health issues. Effective treatment often requires a collaborative approach between dental and ENT specialists. Dentists may provide custom oral appliances that help keep the airway open by repositioning the jaw, while ENT specialists assess and treat any underlying anatomical issues, such as nasal obstructions or enlarged tonsils. This integrated care ensures a comprehensive strategy to manage sleep apnea, improving sleep quality and overall health for patients. Through teamwork, we aim to deliver personalized solutions that enhance both restful sleep and long-term well-being."
       }
     ],
-    fullDescription: "Al-Mansoori Medical provides comprehensive medical services including blood collection and laboratory testing, ear nose and throat care, specialist referrals, and integrated sleep apnea treatment. Our experienced medical team delivers high-quality care in a comfortable, professional environment.",
+    fullDescription: "almansoori Medical provides comprehensive medical services including blood collection and laboratory testing, ear nose and throat care, specialist referrals, and integrated sleep apnea treatment. Our experienced medical team delivers high-quality care in a comfortable, professional environment.",
     treatmentDetails: {
       what: "Comprehensive medical services including blood collection and laboratory testing, ENT services, and sleep apnea treatment.",
       aim: "To provide accessible, high-quality medical care that supports your overall health, prevents illness, and addresses both acute and chronic conditions.",

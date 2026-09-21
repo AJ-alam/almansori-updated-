@@ -54,7 +54,7 @@ const TextMarquee = ({ className = "" }) => {
               style={{
                 width: "4px",
                 height: "4px",
-                background: "linear-gradient(135deg, #FFD922 0%, #F7A800 100%)",
+                background: "linear-gradient(135deg, #F3D255 0%, #F6A51C 100%)",
               }}
             />
           </div>

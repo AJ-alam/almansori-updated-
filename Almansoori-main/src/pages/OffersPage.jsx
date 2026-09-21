@@ -1,20 +1,26 @@
 import React, { useState } from "react";
-import { FaWhatsapp, FaFilter } from "react-icons/fa6";
+import { Link } from "react-router-dom";
+import { FaWhatsapp, FaFilter, FaArrowRight, FaPlus, FaCheck } from "react-icons/fa6";
 import OfferCard from "../components/OfferCard";
 import { offerCategories, getOffersByCategory } from "../data/offers";
 import AnimatedSection from "../components/AnimatedSection";
 
 const OffersPage = () => {
     const [activeCategory, setActiveCategory] = useState("all");
+    const [expandedOfferId, setExpandedOfferId] = useState(null);
     const filteredOffers = getOffersByCategory(activeCategory);
+
+    const toggleOfferExpand = (id) => {
+        setExpandedOfferId((prev) => (prev === id ? null : id));
+    };
 
     const renderCategoryOffers = (categoryId, offersToRender) => {
         if (categoryId === "designyourown" || categoryId === "bloodtest") {
             return (
-                <div className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden">
+                <div className="bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden">
                     {categoryId === "designyourown" ? (
                         <div className="p-6 md:p-8">
-                            <p className="text-gray-600 mb-6">{offersToRender[0]?.description}</p>
+                            <p className="text-gray-600 text-sm md:text-base leading-relaxed mb-6">{offersToRender[0]?.description}</p>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 {offersToRender[0]?.services?.map((service, idx) => (
                                     <div key={idx} className="flex justify-between items-center p-4 bg-gray-50 rounded-xl">
@@ -27,30 +33,100 @@ const OffersPage = () => {
                     ) : (
                         <div className="overflow-x-auto">
                             <table className="w-full text-left border-collapse">
-                                <thead>
-                                    <tr className="bg-gray-50 border-b border-gray-100">
-                                        <th className="py-4 px-6 font-semibold text-gray-600 text-sm uppercase tracking-wider">Package Name</th>
-                                        <th className="py-4 px-6 font-semibold text-gray-600 text-sm uppercase tracking-wider">Tests Included</th>
-                                        <th className="py-4 px-6 font-semibold text-gray-600 text-sm uppercase tracking-wider text-right">Price</th>
-                                    </tr>
-                                </thead>
                                 <tbody>
-                                    {offersToRender.map((offer) => (
-                                        <tr key={offer.id} className="border-b border-gray-50 hover:bg-gray-50/50 transition-colors">
-                                            <td className="py-4 px-6">
-                                                <div className="font-medium text-heading mb-1">{offer.title}</div>
-                                                <div className="text-sm text-gray-500">{offer.description}</div>
-                                            </td>
-                                            <td className="py-4 px-6 text-gray-600">
-                                                <span className="inline-block px-3 py-1 bg-brand-primary/10 text-brand-primary rounded-full text-sm font-medium">
-                                                    {offer.testCount || offer.includes[0]}
-                                                </span>
-                                            </td>
-                                            <td className="py-4 px-6 text-right">
-                                                <span className="text-lg font-bold text-heading">{offer.salePrice} BHD</span>
-                                            </td>
-                                        </tr>
-                                    ))}
+                                    {offersToRender.map((offer) => {
+                                        const isExpanded = expandedOfferId === offer.id;
+                                        return (
+                                            <React.Fragment key={offer.id}>
+                                                <tr
+                                                    onClick={() => toggleOfferExpand(offer.id)}
+                                                    className={`border-b border-gray-100/80 transition-all duration-200 group cursor-pointer select-none ${
+                                                        isExpanded
+                                                            ? "bg-amber-50/20 border-l-4 border-l-brand-primary"
+                                                            : "hover:bg-gray-50/80"
+                                                    }`}
+                                                >
+                                                    {/* Left Column: Package Name & Expanded Details */}
+                                                    <td className="py-4 sm:py-5 px-4 sm:px-6 align-top">
+                                                        <div className="font-primary text-base sm:text-lg font-bold text-heading group-hover:text-brand-primary transition-colors">
+                                                            {offer.title}
+                                                        </div>
+
+                                                        {/* Show description and number of tests directly under name when expanded */}
+                                                        {isExpanded && (
+                                                            <div className="mt-2.5 space-y-2 animate-fadeIn">
+                                                                <div className="inline-flex items-center gap-2">
+                                                                    <span className="text-xs font-bold text-brand-primary bg-brand-primary/10 px-2.5 py-0.5 rounded-full">
+                                                                        {offer.testCount || "Panel"}
+                                                                    </span>
+                                                                    {offer.originalPrice && offer.originalPrice > offer.salePrice && (
+                                                                        <span className="text-[11px] text-emerald-700 bg-emerald-50 border border-emerald-200/60 px-2 py-0.5 rounded-full font-bold">
+                                                                            Save {(offer.originalPrice - offer.salePrice).toFixed(offer.originalPrice % 1 !== 0 || offer.salePrice % 1 !== 0 ? 1 : 0)} BHD
+                                                                        </span>
+                                                                    )}
+                                                                </div>
+                                                                <p className="text-sm md:text-base text-gray-600 font-medium leading-relaxed">
+                                                                    {offer.description}
+                                                                </p>
+                                                                <div className="flex items-center gap-2 pt-1.5 flex-wrap">
+                                                                    <a
+                                                                        href={`https://wa.me/97332221676?text=${encodeURIComponent(`Hello Al Mansoori Clinic, I would like to book the "${offer.title}" blood test package (${offer.salePrice} BHD).`)}`}
+                                                                        target="_blank"
+                                                                        rel="noopener noreferrer"
+                                                                        onClick={(e) => e.stopPropagation()}
+                                                                        className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-[#25D366] text-white hover:bg-[#20ba59] transition-all shadow-xs"
+                                                                    >
+                                                                        <FaWhatsapp className="text-sm" />
+                                                                        <span>WhatsApp</span>
+                                                                    </a>
+                                                                    <Link
+                                                                        to="/contact"
+                                                                        onClick={(e) => e.stopPropagation()}
+                                                                        className="inline-flex items-center gap-1 px-3.5 py-1.5 rounded-full text-xs font-bold bg-heading text-white hover:bg-brand-primary transition-colors shadow-xs"
+                                                                    >
+                                                                        <span>Book Online</span>
+                                                                        <FaArrowRight className="text-[10px]" />
+                                                                    </Link>
+                                                                </div>
+                                                            </div>
+                                                        )}
+                                                    </td>
+
+                                                    {/* Right Column: Price & Plus/Collapse Icon */}
+                                                    <td className="py-4 sm:py-5 px-4 sm:px-6 text-right whitespace-nowrap align-top">
+                                                        <div className="flex items-center justify-end gap-3 sm:gap-4">
+                                                            <div className="text-right">
+                                                                <span className="font-primary text-base sm:text-lg font-black text-heading block whitespace-nowrap">
+                                                                    {offer.salePrice} <span className="text-xs font-bold uppercase text-gray-400">BHD</span>
+                                                                </span>
+                                                                {offer.originalPrice && offer.originalPrice > offer.salePrice && (
+                                                                    <span className="text-[11px] sm:text-xs text-gray-400 line-through block">
+                                                                        {offer.originalPrice} BHD
+                                                                    </span>
+                                                                )}
+                                                            </div>
+                                                            <button
+                                                                type="button"
+                                                                onClick={(e) => {
+                                                                    e.stopPropagation();
+                                                                    toggleOfferExpand(offer.id);
+                                                                }}
+                                                                title={isExpanded ? "Collapse details" : "Expand details"}
+                                                                aria-label={isExpanded ? "Collapse details" : "Expand details"}
+                                                                className="w-8 h-8 flex items-center justify-center text-heading group-hover:text-brand-primary group-hover:scale-110 cursor-pointer flex-shrink-0 transition-transform duration-200"
+                                                            >
+                                                                <span className={`text-2xl font-light leading-none transition-transform duration-300 inline-block select-none ${
+                                                                    isExpanded ? "rotate-45 text-brand-primary font-normal scale-110" : ""
+                                                                }`}>
+                                                                    +
+                                                                </span>
+                                                            </button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </React.Fragment>
+                                        );
+                                    })}
                                 </tbody>
                             </table>
                         </div>
@@ -61,7 +137,7 @@ const OffersPage = () => {
 
         // Default: Offer Cards Grid
         return (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 items-stretch justify-center max-w-6xl mx-auto">
                 {offersToRender.map((offer, index) => (
                     <OfferCard
                         key={offer.id}
@@ -74,19 +150,13 @@ const OffersPage = () => {
     };
 
     return (
-        <section className="w-full min-h-screen pt-28 lg:pt-24">
+        <section className="w-full min-h-screen pt-20 sm:pt-24 lg:pt-20">
             <div className="bg-gray-50">
-                <div className="py-10 md:py-14 px-4 md:px-8 lg:px-12">
+                <div className="pt-1 pb-10 md:pt-2 md:pb-12 px-4 md:px-8 lg:px-12">
                     <div className="max-w-7xl mx-auto">
                         {/* Category Filter Section */}
-                        <div className="mb-10">
-                            <div className="flex items-center gap-3 mb-4">
-                                <FaFilter className="text-brand-primary" />
-                                <span className="text-sm font-semibold text-gray-600 uppercase tracking-wider">
-                                    Filter by Category
-                                </span>
-                            </div>
-                            <div className="flex flex-wrap gap-3">
+                        <div className="mb-5 md:mb-6">
+                            <div className="flex flex-wrap gap-2.5 sm:gap-3">
                                 {offerCategories.map((category) => {
                                     const Icon = category.icon;
                                     const isActive = activeCategory === category.id;
@@ -107,16 +177,6 @@ const OffersPage = () => {
                             </div>
                         </div>
 
-                        {/* Results Count */}
-                        <div className="mb-8">
-                            <p className="text-gray-500">
-                                Showing <span className="font-semibold text-heading">{filteredOffers.length}</span> packages
-                                {activeCategory !== "all" && (
-                                    <span> in <span className="font-semibold text-brand-primary">{offerCategories.find(c => c.id === activeCategory)?.name}</span></span>
-                                )}
-                            </p>
-                        </div>
-
                         {/* Offers Content */}
                         <AnimatedSection animation="fadeUp" delay={0.1}>
                             {activeCategory === "all" ? (
@@ -127,9 +187,6 @@ const OffersPage = () => {
 
                                         return (
                                             <div key={category.id}>
-                                                <div className="mb-6">
-                                                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-primary text-heading capitalize whitespace-normal md:whitespace-nowrap">{category.name}</h2>
-                                                </div>
                                                 {renderCategoryOffers(category.id, catOffers)}
                                             </div>
                                         );
@@ -144,7 +201,7 @@ const OffersPage = () => {
                         {filteredOffers.length === 0 && (
                             <div className="text-center py-20 bg-white rounded-3xl">
                                 <div className="text-6xl mb-4">🎁</div>
-                                <h3 className="font-primary text-2xl text-heading mb-2">No Packages Available</h3>
+                                <h3 className="font-primary text-2xl md:text-3xl text-heading mb-2 font-bold">No Packages Available</h3>
                                 <p className="text-gray-500 text-lg">
                                     No packages available in this category at the moment.
                                 </p>
@@ -164,7 +221,7 @@ const OffersPage = () => {
                             <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2"></div>
 
                             <div className="relative z-10">
-                                <h3 className="font-primary text-2xl md:text-4xl text-white mb-4">
+                                <h3 className="font-primary text-2xl md:text-3xl text-white mb-4 font-bold">
                                     Have Questions About Our Packages?
                                 </h3>
                                 <p className="text-white/70 max-w-2xl mx-auto mb-8 text-lg">

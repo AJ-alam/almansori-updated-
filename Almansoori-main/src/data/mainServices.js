@@ -1,7 +1,7 @@
 // Main services shown on homepage - 4 Main Categories
 export const mainServices = [
     {
-        slug: "dental/aesthetic-dentistry#fed",
+        slug: "dental/face-enhancement-dentistry",
         title: "Face Enhancement Dentistry",
         shortTitle: "Face Enhancement Dentistry",
         video: "/services/videos/dental.mp4", // Kept original video temporarily

@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import LandingPage from "./pages/LandingPage";
 import Header from "./components/Header";
@@ -25,6 +25,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Navigate to="/services/dental" replace />} />
         <Route path="/services/:slug" element={<ServiceDetail />} />
         <Route path="/services/:slug/:subSlug" element={<ServiceDetail />} />
         <Route path="/contact" element={<ContactPage />} />

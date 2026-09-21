@@ -94,7 +94,7 @@ const Service = ({ headerImage, title, desc, slug, subServices, isExpanded, onTo
               <div className="h-px w-full bg-white/10 mb-8" />
 
               {/* Sub-services Grid */}
-              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
+              <div className={`grid gap-4 items-stretch justify-center ${subServices.length === 1 ? 'grid-cols-1 max-w-sm mx-auto' : subServices.length === 2 ? 'grid-cols-2 max-w-lg mx-auto' : subServices.length === 3 ? 'grid-cols-1 sm:grid-cols-3 max-w-3xl mx-auto' : subServices.length === 4 ? 'grid-cols-2 sm:grid-cols-4 max-w-4xl mx-auto' : 'grid-cols-2 md:grid-cols-4 lg:grid-cols-5'}`}>
                 {subServices.map((sub, index) => {
                   const SubIcon = sub.icon;
                   return (

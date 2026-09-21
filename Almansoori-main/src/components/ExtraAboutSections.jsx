@@ -18,9 +18,8 @@ const ExtraAboutSections = () => {
                 <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
                     {/* Left - Content */}
                     <div className="w-full lg:w-1/2">
-                        <span className="text-white/80 font-semibold tracking-widest uppercase text-sm block mb-2">Partners</span>
-                        <h2 className="font-primary text-4xl mb-6">Our Insurance Partners</h2>
-                        <p className="text-white/80 leading-relaxed mb-8">
+                        <h2 className="font-primary text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">Our Insurance Partners</h2>
+                        <p className="text-white/80 text-sm md:text-base leading-relaxed mb-8">
                             We work with most major insurance providers to ensure you receive the care you need with
                             maximum convenience and minimum hassle.
                         </p>

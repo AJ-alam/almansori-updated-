@@ -23,9 +23,28 @@ export const BrandText = ({ children, className = "" }) => {
     let key = 0;
     BRAND_REGEX.lastIndex = 0;
     while ((match = BRAND_REGEX.exec(children)) !== null) {
+        // Check if this occurrence is part of a doctor's / person's personal name
+        const textBefore = children.slice(0, match.index);
+        const isDoctorName = /(?:(?:Dr\.?|Doctor|DR\.?)\s*(?:[A-Za-z]+\s+)?|Aysha\s+|Ayesha\s+)$/i.test(textBefore);
+
+        if (isDoctorName) {
+            if (match.index > lastIndex) {
+                parts.push(children.slice(lastIndex, match.index));
+            }
+            // Used in a person's name: keep black/normal text color
+            parts.push(
+                <span key={key++} className="text-inherit normal-case font-normal">
+                    almansoori
+                </span>
+            );
+            lastIndex = match.index + match[0].length;
+            continue;
+        }
+
         if (match.index > lastIndex) {
             parts.push(children.slice(lastIndex, match.index));
         }
+        // Used as the medical center/brand: make yellow
         parts.push(
             <span key={key++} className={`text-brand-accent font-semibold normal-case ${className}`}>
                 almansoori

@@ -122,33 +122,8 @@ const HomeServices = () => {
     return (
         <section className="w-full bg-gradient-to-br from-gray-700 to-gray-900 py-10 md:py-14">
             {/* Section Header */}
-            <div className="max-w-7xl mx-auto px-4 md:px-8 mb-6">
-                <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-                    <div className="max-w-xl">
-                        <h2 className="font-primary text-4xl md:text-5xl text-white whitespace-normal md:whitespace-nowrap">Our Unique Services</h2>
-                    </div>
-
-                    <Link
-                        to="/services/dental"
-                        className="bg-white text-heading px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors w-fit flex-shrink-0"
-                    >
-                        <span>View All Services</span>
-                    </Link>
-                </div>
-            </div>
-
-            {/* Top Service Tags */}
-            <div className="max-w-7xl mx-auto px-4 md:px-8 mb-8">
-                <div className="flex flex-wrap gap-3 justify-start">
-                    {['Dental Care', 'Aesthetic Treatments', 'Skin Analysis', 'Laser Therapy', 'Hydrafacial', 'Mental Wellness'].map((tag, i) => (
-                        <span
-                            key={i}
-                            className="px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-sm text-white/80 hover:bg-white hover:text-gray-900 transition-all cursor-pointer"
-                        >
-                            {tag}
-                        </span>
-                    ))}
-                </div>
+            <div className="max-w-7xl mx-auto px-4 md:px-8 mb-10">
+                <h2 className="font-primary text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">Our Unique Services</h2>
             </div>
 
             {/* Services Cards Container */}

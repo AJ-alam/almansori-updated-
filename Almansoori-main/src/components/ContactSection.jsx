@@ -55,12 +55,12 @@ const ContactSection = () => {
           {/* Left Side - Content */}
           <div className="space-y-6">
             {/* Title */}
-            <h2 className="font-primary text-4xl md:text-5xl lg:text-6xl text-heading leading-tight whitespace-normal md:whitespace-nowrap">
+            <h2 className="font-primary text-2xl sm:text-3xl md:text-4xl font-bold text-heading leading-tight whitespace-normal md:whitespace-nowrap">
               get in touch
             </h2>
 
             {/* Description */}
-            <p className="text-body text-base md:text-lg leading-relaxed max-w-md">
+            <p className="text-body text-sm md:text-base leading-relaxed max-w-md">
               Ready to schedule your appointment? Contact us today and take the
               first step towards your perfect smile.
             </p>

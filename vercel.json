@@ -1,0 +1,10 @@
+{
+  "buildCommand": "cd Almansoori-main && npm install && npm run build",
+  "outputDirectory": "Almansoori-main/dist",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}

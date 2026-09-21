@@ -63,7 +63,7 @@ const MediaSection = () => {
                 {/* Section Header */}
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
                     <div className="text-center md:text-left">
-                        <h2 className="font-primary text-3xl md:text-5xl text-white whitespace-normal md:whitespace-nowrap">In Media</h2>
+                        <h2 className="font-primary text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white whitespace-normal md:whitespace-nowrap leading-tight">In Media</h2>
                     </div>
 
                     {/* Carousel Navigation */}
@@ -105,7 +105,7 @@ const MediaSection = () => {
                                 {/* Hover Overlay */}
                                 <div className="absolute inset-0 bg-gradient-to-t from-brand-primary-950/90 via-brand-primary-950/30 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6">
                                     <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                                        <h4 className="text-white font-primary text-xl mb-2">{item.title}</h4>
+                                        <h4 className="text-white font-primary text-lg md:text-xl font-bold mb-2">{item.title}</h4>
                                         <span className="text-brand-primary-300 text-sm font-medium">Click to View</span>
                                     </div>
                                 </div>

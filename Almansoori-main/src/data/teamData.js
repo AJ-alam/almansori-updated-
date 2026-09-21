@@ -1,9 +1,5 @@
 export const teamDepartments = [
   {
-    id: "dentists",
-    label: "Dentists",
-  },
-  {
     id: "doctors",
     label: "Doctors",
   },
@@ -14,44 +10,42 @@ export const teamDepartments = [
 ];
 
 export const teamMembers = [
-  // ── DENTISTS ──────────────────────────────────────────
+  // ── DOCTORS ───────────────────────────────────────────
   {
-    name: "Dr. Aysha AlMansoori",
+    name: "Dr. Aysha almansoori",
     role: "Owner & Medical Director",
     specialties: ["Restorative Dentistry", "Face Enhancement Dentistry"],
-    department: "dentists",
+    department: "doctors",
     image: "/doctors/ayesha 1.png",
   },
   {
     name: "Dr. Basile Numbnar",
     role: "Dental Specialist",
     specialties: ["Periodontology", "Implantology"],
-    department: "dentists",
+    department: "doctors",
     image: "/doctors/placeholder.jpg",
   },
   {
     name: "Dr. Hassan",
-    role: "General Dentist",
+    role: "Doctor",
     specialties: ["General Dentistry"],
-    department: "dentists",
+    department: "doctors",
     image: "/doctors/placeholder.jpg",
   },
   {
     name: "Dr. Ahmed",
-    role: "General Dentist",
+    role: "Doctor",
     specialties: ["General Dentistry"],
-    department: "dentists",
+    department: "doctors",
     image: "/doctors/placeholder.jpg",
   },
   {
     name: "Dr. Aziza Saeed",
-    role: "General Dentist, Psychotherapist",
+    role: "Doctor, Psychotherapist",
     specialties: ["General Dentistry", "Psychotherapy"],
-    department: "dentists",
+    department: "doctors",
     image: "/doctors/dr aziza.png",
   },
-
-  // ── DOCTORS ───────────────────────────────────────────
   {
     name: "Dr. Israa",
     role: "Medical Specialist",
@@ -63,7 +57,7 @@ export const teamMembers = [
   // ── SUPPORTING STAFF ──────────────────────────────────
   {
     name: "Hana",
-    role: "Senior Dental Assistant",
+    role: "Senior Assistant",
     specialties: [],
     department: "support",
     image: "/doctors/placeholder.jpg",
@@ -77,7 +71,7 @@ export const teamMembers = [
   },
   {
     name: "Fatima Alhayki",
-    role: "Senior Dental Assistant",
+    role: "Senior Assistant",
     specialties: [],
     department: "support",
     image: "/doctors/placeholder.jpg",
