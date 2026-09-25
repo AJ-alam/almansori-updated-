@@ -230,7 +230,7 @@ export const services = [
         slug: "elderly-oral-and-dental-care",
         icon: MdElderly,
         description: "Maintain Good Oral Health And Hygiene For The Elderly",
-        fullDescription: "It is extremely important both for the emotional and physical health and well being of the elderly to maintain good oral health and hygiene. almansoori DENTAL CENTRE is experienced in working with the elderly to construct and replace missing teeth with Crowns and Bridges, Dentures and Implants and giving our more senior patients plenty of reasons to smile!",
+        fullDescription: "It is extremely important both for the emotional and physical health and well being of the elderly to maintain good oral health and hygiene. almansoori dental centre is experienced in working with the elderly to construct and replace missing teeth with Crowns and Bridges, Dentures and Implants and giving our more senior patients plenty of reasons to smile!",
         treatments: [
           {
             name: "Custom Senior Dentures",
@@ -255,7 +255,7 @@ export const services = [
         slug: "children-oral-and-dental-care",
         icon: FaChild,
         description: "Dedicated To Your Child’s Oral Health And Happiness",
-        fullDescription: "almansoori DENTAL CENTER is dedicated to your child’s oral health and happiness. Our team of friendly and caring specialists is experienced working with children and will help make your trip to the dentist a positive experience for you and your child. When you bring your child in for a check up we will calm their dental fears, and advise you on the best treatment options and preventative measures that will ensure your child’s good oral health now and in the future.",
+        fullDescription: "almansoori dental center is dedicated to your child’s oral health and happiness. Our team of friendly and caring specialists is experienced working with children and will help make your trip to the dentist a positive experience for you and your child. When you bring your child in for a check up we will calm their dental fears, and advise you on the best treatment options and preventative measures that will ensure your child’s good oral health now and in the future.",
         treatments: [
           {
             name: "Fillings",
@@ -361,7 +361,7 @@ export const services = [
           },
           {
             name: "X-Ray",
-            description: "At almansoori DENTAL CENTER we use the latest x-ray machines to provide you with the full picture. An X- Ray will ensure a definite diagnosis and help us create a treatment plan that is just right for your unique case."
+            description: "At almansoori dental center we use the latest x-ray machines to provide you with the full picture. An X- Ray will ensure a definite diagnosis and help us create a treatment plan that is just right for your unique case."
           },
           {
             name: "Emergency and Pain",
