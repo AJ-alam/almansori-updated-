@@ -9,7 +9,7 @@ import TextMarquee from "../components/TextMarquee";
 
 const About = () => {
     return (
-        <section className="w-full min-h-screen pt-28 lg:pt-24">
+        <section className="w-full min-h-screen pt-20 sm:pt-24 lg:pt-20">
             {/* 2.1 Dr. Aysha Section */}
             <AnimatedSection animation="fadeUp" delay={0.1}>
                 <AboutSection />
@@ -30,7 +30,7 @@ const About = () => {
                 <TeamSection />
             </AnimatedSection>
 
-            {/* 2.4: Our Partners (Insurance) - Moved to End */}
+            {/* 2.4: Text Marquee & Our Insurance Partners */}
             <AnimatedSection animation="fadeUp" delay={0.1}>
                 <TextMarquee />
                 <ExtraAboutSections />

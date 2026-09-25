@@ -4,7 +4,7 @@ import Brand, { BrandText } from "./Brand";
 
 const AboutSection = () => {
   return (
-    <section className="py-8 md:py-12 px-4 md:px-9 bg-white">
+    <section className="pt-2 md:pt-4 pb-8 md:pb-12 px-4 md:px-9 bg-white">
       <div className="mx-auto max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-center">
           {/* Left Side - Text Content */}

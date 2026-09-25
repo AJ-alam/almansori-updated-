@@ -4,51 +4,80 @@ import Brand, { BrandText } from "./Brand";
 
 const AboutSection = () => {
   return (
-    <section className="py-6 md:py-8 px-4 md:px-9 bg-white">
+    <section className="pt-2 md:pt-4 pb-8 md:pb-12 px-4 md:px-9 bg-white">
       <div className="mx-auto max-w-7xl">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-center">
           {/* Left Side - Text Content */}
-          <div className="space-y-4">
-            {/* Title */}
-            <h2 className="font-primary text-3xl md:text-4xl lg:text-5xl text-heading leading-tight capitalize whitespace-normal md:whitespace-nowrap">
-              Dr. Aysha <Brand className="font-bold text-3xl md:text-4xl lg:text-5xl" />
-            </h2>
+          <div className="space-y-3 py-1">
+            {/* Meet the Owner & Title */}
+            <div>
+              <span className="inline-block text-xs md:text-sm font-bold uppercase tracking-widest text-brand-primary mb-1">
+                Meet the Owner
+              </span>
+              <h2 className="font-primary text-2xl sm:text-3xl md:text-4xl text-black font-bold leading-tight capitalize whitespace-nowrap">
+                Dr. Aysha Almansoori
+              </h2>
+            </div>
 
             {/* Role */}
-            <p className="text-heading font-semibold text-lg">
+            <p className="text-heading font-semibold text-base md:text-lg tracking-wide">
               Restorative and Aesthetic Specialist
             </p>
 
-            {/* Qualifications */}
-            <div className="space-y-2">
-              <p className="text-body text-sm md:text-base leading-snug">
-                <strong>30+ years</strong> of experience as Restorative and Aesthetic Specialist
-              </p>
-              <p className="text-body text-sm md:text-base leading-snug">
-                <strong>Bachelor Degree</strong> from Cairo University (1994)
-              </p>
-              <p className="text-body text-sm md:text-base leading-snug">
-                <strong>Clinical Master</strong> in Restorative and Aesthetic Dentistry - UCLA (2011)
-              </p>
-              <p className="text-body text-sm md:text-base leading-snug">
-                <strong>Master's Degree</strong> in Restorative and Aesthetic Dentistry - Manchester University (2016)
-              </p>
-              <p className="text-body text-sm md:text-base leading-snug">
-                <strong>Certificate in Dental Implant</strong> Since 2000
-              </p>
-              <p className="text-body text-sm md:text-base leading-snug">
-                <strong>Certified Invisalign Provider</strong> Since 2011
-              </p>
-              <p className="text-body text-sm md:text-base leading-snug">
-                <strong>Invented</strong> Face Enhancement Dentistry
-              </p>
-              <p className="text-body text-sm md:text-base leading-snug">
-                <strong>Fellowship in Anti-Aging</strong> (2016) - Face Enhancement Dentistry Specialist
-              </p>
+            {/* Qualifications List */}
+            <div className="space-y-1.5 text-body text-sm md:text-base leading-relaxed">
+              <div className="flex items-start gap-2.5">
+                <span className="inline-block w-2 h-2 rounded-full bg-brand-accent mt-1.5 shrink-0" />
+                <p>
+                  <strong className="text-heading font-semibold">30+ years</strong> of experience as Restorative and Aesthetic Specialist
+                </p>
+              </div>
+              <div className="flex items-start gap-2.5">
+                <span className="inline-block w-2 h-2 rounded-full bg-brand-accent mt-1.5 shrink-0" />
+                <p>
+                  <strong className="text-heading font-semibold">Bachelor Degree</strong> from Cairo University (1994)
+                </p>
+              </div>
+              <div className="flex items-start gap-2.5">
+                <span className="inline-block w-2 h-2 rounded-full bg-brand-accent mt-1.5 shrink-0" />
+                <p>
+                  <strong className="text-heading font-semibold">Clinical Master</strong> in Restorative and Aesthetic Dentistry - UCLA (2011)
+                </p>
+              </div>
+              <div className="flex items-start gap-2.5">
+                <span className="inline-block w-2 h-2 rounded-full bg-brand-accent mt-1.5 shrink-0" />
+                <p>
+                  <strong className="text-heading font-semibold">Master's Degree</strong> in Restorative and Aesthetic Dentistry - Manchester University (2016)
+                </p>
+              </div>
+              <div className="flex items-start gap-2.5">
+                <span className="inline-block w-2 h-2 rounded-full bg-brand-accent mt-1.5 shrink-0" />
+                <p>
+                  <strong className="text-heading font-semibold">Certificate in Dental Implant</strong> Since 2000
+                </p>
+              </div>
+              <div className="flex items-start gap-2.5">
+                <span className="inline-block w-2 h-2 rounded-full bg-brand-accent mt-1.5 shrink-0" />
+                <p>
+                  <strong className="text-heading font-semibold">Certified Invisalign Provider</strong> Since 2011
+                </p>
+              </div>
+              <div className="flex items-start gap-2.5">
+                <span className="inline-block w-2 h-2 rounded-full bg-brand-accent mt-1.5 shrink-0" />
+                <p>
+                  <strong className="text-heading font-semibold">Invented</strong> Face Enhancement Dentistry
+                </p>
+              </div>
+              <div className="flex items-start gap-2.5">
+                <span className="inline-block w-2 h-2 rounded-full bg-brand-accent mt-1.5 shrink-0" />
+                <p>
+                  <strong className="text-heading font-semibold">Fellowship in Anti-Aging</strong> (2016) - Face Enhancement Dentistry Specialist
+                </p>
+              </div>
             </div>
 
             {/* Description */}
-            <p className="text-body text-sm md:text-base leading-snug pt-2">
+            <p className="text-body text-sm md:text-base leading-relaxed pt-1">
               <BrandText>Dr. Aysha AlMansoori established AlMansoori Dental Clinic in 1997.</BrandText> She specializes
               in face enhancement dentistry, dental face lift, and aesthetic dentistry. Her
               interest in facial beauty led her to obtain her fellowship in anti-aging
@@ -56,13 +85,13 @@ const AboutSection = () => {
             </p>
           </div>
 
-          {/* Right Side - Image */}
-          <div className="relative">
-            <div className="bg-gray-200 rounded-3xl overflow-hidden h-[400px] md:h-[500px] lg:h-[600px]">
+          {/* Right Side - Image aligned with text */}
+          <div className="relative w-full flex justify-center items-center">
+            <div className="w-full max-w-[420px] lg:max-w-[450px] bg-gradient-to-b from-slate-50 via-slate-100/60 to-slate-100 rounded-3xl overflow-hidden shadow-md border border-slate-200/60">
               <img
                 src={doctorImg}
                 alt="Dr. Aysha AlMansoori - Chairman & Managing Director"
-                className="w-full h-full object-cover object-top"
+                className="w-full h-auto block object-contain"
               />
             </div>
           </div>

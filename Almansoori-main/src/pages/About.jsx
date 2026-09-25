@@ -9,7 +9,7 @@ import TextMarquee from "../components/TextMarquee";
 
 const About = () => {
     return (
-        <section className="w-full min-h-screen pt-36 sm:pt-40 lg:pt-28">
+        <section className="w-full min-h-screen pt-20 sm:pt-24 lg:pt-20">
             {/* 2.1 Dr. Aysha Section */}
             <AnimatedSection animation="fadeUp" delay={0.1}>
                 <AboutSection />

@@ -125,26 +125,6 @@ const ContactSection = () => {
                 </a>
               </div>
             </div>
-
-            {/* Support Badges */}
-            <div className="flex flex-wrap gap-6 pt-4">
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-white shadow-md rounded-full flex-shrink-0 flex items-center justify-center text-heading text-xl">
-                  <FaPhone />
-                </div>
-                <span className="font-secondary-600 text-heading">
-                  Call Us Anytime
-                </span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-white shadow-md rounded-full flex-shrink-0 flex items-center justify-center text-green-500 text-2xl">
-                  <FaWhatsapp />
-                </div>
-                <span className="font-secondary-600 text-heading">
-                  WhatsApp Us
-                </span>
-              </div>
-            </div>
           </div>
 
           {/* Right Side - Contact Form */}
