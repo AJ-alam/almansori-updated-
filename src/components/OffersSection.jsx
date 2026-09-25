@@ -13,7 +13,7 @@ const OffersSection = () => {
                 {/* Section Header */}
                 <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-8">
                     <div className="max-w-xl">
-                        <h2 className="font-primary text-4xl md:text-5xl text-white mb-3 whitespace-normal md:whitespace-nowrap">Packages</h2>
+                        <h2 className="font-primary text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 whitespace-normal md:whitespace-nowrap leading-tight">Packages</h2>
                         <p className="text-white/70">
                             Discover our exclusive packages designed to help
                             you look and feel your best — all at irresistible prices.
@@ -30,12 +30,11 @@ const OffersSection = () => {
                 </div>
 
                 {/* Featured Offers Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {featuredOffers.slice(0, 3).map((offer, index) => (
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center max-w-6xl mx-auto">
+                    {featuredOffers.slice(0, 3).map((offer) => (
                         <OfferCard
                             key={offer.id}
                             offer={offer}
-                            featured={index === 0}
                         />
                     ))}
                 </div>

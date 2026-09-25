@@ -23,8 +23,8 @@ const OffersPage = () => {
                             <p className="text-gray-600 text-sm md:text-base leading-relaxed mb-6">{offersToRender[0]?.description}</p>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 {offersToRender[0]?.services?.map((service, idx) => (
-                                    <div key={idx} className="flex justify-between items-center p-4 bg-gray-50 rounded-xl">
-                                        <span className="font-medium text-heading">{service.name}</span>
+                                    <div key={idx} className="flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 rounded-xl transition-colors group cursor-default">
+                                        <span className="font-medium text-heading group-hover:text-brand-accent transition-colors">{service.name}</span>
                                         <span className="font-bold text-brand-primary">{service.price} BHD</span>
                                     </div>
                                 ))}
@@ -42,13 +42,13 @@ const OffersPage = () => {
                                                     onClick={() => toggleOfferExpand(offer.id)}
                                                     className={`border-b border-gray-100/80 transition-all duration-200 group cursor-pointer select-none ${
                                                         isExpanded
-                                                            ? "bg-amber-50/20 border-l-4 border-l-brand-primary"
-                                                            : "hover:bg-gray-50/80"
+                                                            ? "bg-gray-100/80 border-l-4 border-l-brand-accent"
+                                                            : "hover:bg-gray-100"
                                                     }`}
                                                 >
                                                     {/* Left Column: Package Name & Expanded Details */}
                                                     <td className="py-4 sm:py-5 px-4 sm:px-6 align-top">
-                                                        <div className="font-primary text-base sm:text-lg font-bold text-heading group-hover:text-brand-primary transition-colors">
+                                                        <div className="font-primary text-base sm:text-lg font-bold text-heading group-hover:text-brand-accent transition-colors">
                                                             {offer.title}
                                                         </div>
 
@@ -113,10 +113,10 @@ const OffersPage = () => {
                                                                 }}
                                                                 title={isExpanded ? "Collapse details" : "Expand details"}
                                                                 aria-label={isExpanded ? "Collapse details" : "Expand details"}
-                                                                className="w-8 h-8 flex items-center justify-center text-heading group-hover:text-brand-primary group-hover:scale-110 cursor-pointer flex-shrink-0 transition-transform duration-200"
+                                                                className="w-8 h-8 flex items-center justify-center text-heading group-hover:text-brand-accent group-hover:scale-110 cursor-pointer flex-shrink-0 transition-transform duration-200"
                                                             >
                                                                 <span className={`text-2xl font-light leading-none transition-transform duration-300 inline-block select-none ${
-                                                                    isExpanded ? "rotate-45 text-brand-primary font-normal scale-110" : ""
+                                                                    isExpanded ? "rotate-45 text-brand-accent font-normal scale-110" : ""
                                                                 }`}>
                                                                     +
                                                                 </span>
@@ -138,11 +138,10 @@ const OffersPage = () => {
         // Default: Offer Cards Grid
         return (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 items-stretch justify-center max-w-6xl mx-auto">
-                {offersToRender.map((offer, index) => (
+                {offersToRender.map((offer) => (
                     <OfferCard
                         key={offer.id}
                         offer={offer}
-                        featured={index === 0 && activeCategory === "all"}
                     />
                 ))}
             </div>

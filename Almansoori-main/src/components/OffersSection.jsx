@@ -31,11 +31,10 @@ const OffersSection = () => {
 
                 {/* Featured Offers Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center max-w-6xl mx-auto">
-                    {featuredOffers.slice(0, 3).map((offer, index) => (
+                    {featuredOffers.slice(0, 3).map((offer) => (
                         <OfferCard
                             key={offer.id}
                             offer={offer}
-                            featured={index === 0}
                         />
                     ))}
                 </div>
