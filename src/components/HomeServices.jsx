@@ -1,13 +1,9 @@
 import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { mainServices } from "../data/mainServices";
-import { FaArrowRight, FaTooth, FaSpa, FaUserMd, FaLeaf } from "react-icons/fa";
-
-const icons = [FaTooth, FaSpa, FaUserMd, FaLeaf];
 
 const ServiceCard = ({ service, index, isActive, onHover }) => {
     const videoRef = useRef(null);
-    const Icon = icons[index] || FaTooth;
 
     const handleMouseEnter = () => {
         onHover(index);
@@ -33,7 +29,7 @@ const ServiceCard = ({ service, index, isActive, onHover }) => {
         >
             <Link to={`/services/${service.slug}`} className="block h-full">
                 {/* Card Container */}
-                <div className="relative h-[400px] md:h-[500px] rounded-3xl overflow-hidden">
+                <div className="relative h-[360px] sm:h-[400px] md:h-[440px] rounded-3xl overflow-hidden">
                     {/* Video/Image Background */}
                     <div className="absolute inset-0">
                         <video
@@ -56,20 +52,13 @@ const ServiceCard = ({ service, index, isActive, onHover }) => {
 
                     {/* Content */}
                     <div className="relative h-full flex flex-col justify-between p-6 md:p-8 pointer-events-none">
-                        {/* Top Section - Number & Icon */}
+                        {/* Top Section - Number Badge */}
                         <div className="flex items-center justify-between">
-                            {/* Number Badge */}
                             <div className={`flex items-center justify-center transition-all duration-500 ${isActive
-                                ? 'w-14 h-14 bg-white text-gray-900 rounded-2xl'
-                                : 'w-12 h-12 bg-white/20 backdrop-blur-sm text-white rounded-xl border border-white/20'
+                                ? 'w-12 h-12 md:w-14 md:h-14 bg-white text-gray-900 rounded-2xl'
+                                : 'w-10 h-10 md:w-12 md:h-12 bg-white/20 backdrop-blur-sm text-white rounded-xl border border-white/20'
                                 }`}>
-                                <span className="font-primary text-xl font-bold">0{index + 1}</span>
-                            </div>
-
-                            {/* Icon - visible when active */}
-                            <div className={`w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center border border-white/20 transition-all duration-500 ${isActive ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
-                                }`}>
-                                <Icon className="text-white text-xl" />
+                                <span className="font-primary text-lg md:text-xl font-bold">0{index + 1}</span>
                             </div>
                         </div>
 
@@ -89,19 +78,8 @@ const ServiceCard = ({ service, index, isActive, onHover }) => {
                                 </p>
 
                                 {/* CTA Button */}
-                                <div className="inline-flex items-center gap-3 bg-white text-gray-900 px-5 py-3 rounded-full font-medium text-sm pointer-events-auto hover:bg-gray-100 transition-colors group/btn">
+                                <div className="inline-flex items-center justify-center bg-white text-gray-900 px-6 py-2.5 rounded-full font-medium text-sm pointer-events-auto hover:bg-gray-100 transition-colors">
                                     <span>Explore</span>
-                                    <div className="w-6 h-6 bg-gray-900 rounded-full flex items-center justify-center group-hover/btn:translate-x-1 transition-transform">
-                                        <FaArrowRight className="text-white text-xs" />
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Arrow indicator when not active */}
-                            <div className={`transition-all duration-500 ${isActive ? 'opacity-0 max-h-0' : 'opacity-100 max-h-10'
-                                }`}>
-                                <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/20 group-hover:bg-white group-hover:border-white transition-all">
-                                    <FaArrowRight className="text-white group-hover:text-gray-900 text-sm transition-colors" />
                                 </div>
                             </div>
                         </div>
@@ -120,35 +98,10 @@ const HomeServices = () => {
     const [activeIndex, setActiveIndex] = useState(0);
 
     return (
-        <section className="w-full bg-gradient-to-br from-gray-700 to-gray-900 py-10 md:py-14">
+        <section className="w-full bg-gradient-to-br from-gray-700 to-gray-900 py-8 md:py-12">
             {/* Section Header */}
-            <div className="max-w-7xl mx-auto px-4 md:px-8 mb-6">
-                <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-                    <div className="max-w-xl">
-                        <h2 className="font-primary text-4xl md:text-5xl text-white whitespace-normal md:whitespace-nowrap">Our Unique Services</h2>
-                    </div>
-
-                    <Link
-                        to="/services/dental"
-                        className="bg-white text-heading px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors w-fit flex-shrink-0"
-                    >
-                        <span>View All Services</span>
-                    </Link>
-                </div>
-            </div>
-
-            {/* Top Service Tags */}
-            <div className="max-w-7xl mx-auto px-4 md:px-8 mb-8">
-                <div className="flex flex-wrap gap-3 justify-start">
-                    {['Dental Care', 'Aesthetic Treatments', 'Skin Analysis', 'Laser Therapy', 'Hydrafacial', 'Mental Wellness'].map((tag, i) => (
-                        <span
-                            key={i}
-                            className="px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-sm text-white/80 hover:bg-white hover:text-gray-900 transition-all cursor-pointer"
-                        >
-                            {tag}
-                        </span>
-                    ))}
-                </div>
+            <div className="max-w-7xl mx-auto px-4 md:px-8 mb-6 md:mb-8">
+                <h2 className="font-primary text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">Our Unique Services</h2>
             </div>
 
             {/* Services Cards Container */}
