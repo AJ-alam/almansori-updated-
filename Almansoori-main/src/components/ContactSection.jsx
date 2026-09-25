@@ -81,7 +81,7 @@ const ContactSection = () => {
                 <span className="font-secondary-600">+973 3222 1676</span>
               </a>
 
-              <a href="https://www.bing.com/maps/search?q=Bldg+No+1267%2C+Road+1319%2C+Block+913+-+East+Riffa%2C+Kingdom+Of+Bahrain&cp=26.131527~50.550343&lvl=21" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-heading hover:text-brand-primary transition-colors group">
+              <a href="https://www.google.com/maps/place/Almansoori+Dental+and+Medical/@26.1300673,50.5574876,17z/data=!3m1!4b1!4m6!3m5!1s0x3e49ac4a1e62d0b1:0x22920f5d00f2ccb!8m2!3d26.1300625!4d50.5600625!16s%2Fg%2F11cmqnxkp_?entry=ttu&g_ep=EgoyMDI2MDkyMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-heading hover:text-brand-primary transition-colors group">
                 <div className="w-10 h-10 bg-white shadow-sm rounded-full flex items-center justify-center group-hover:bg-brand-primary group-hover:text-white transition-all">
                   <FaMapMarkerAlt className="text-lg" />
                 </div>
