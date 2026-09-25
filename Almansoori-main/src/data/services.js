@@ -30,7 +30,7 @@ export const services = [
         treatments: [
           {
             name: "Digital Smile Architecture & Facial Analysis",
-            description: "A comprehensive 3D diagnostic evaluation assessing the harmony between your facial muscles, jaw alignment, lip dynamics, and tooth proportions. Using state-of-the-art digital imaging, Dr. Aysha almansoori maps out a customized roadmap to restore lost vertical dimension and facial balance.\n\nTo discover how Face Enhancement Dentistry can revitalize your smile and facial appearance, call 17760666 and schedule your personalized cosmetic consultation today."
+            description: "A comprehensive 3D diagnostic evaluation assessing the harmony between your facial muscles, jaw alignment, lip dynamics, and tooth proportions. Using state-of-the-art digital imaging, Dr. Aysha almansoori maps out a customized roadmap to restore lost vertical dimension and facial balance."
           },
           {
             name: "Non-Surgical Dental Face Lift",
@@ -69,7 +69,7 @@ export const services = [
           },
           {
             name: "Face Enhancement Dentistry",
-            description: "Face Enhancement Dentistry is a holistic approach to enhancing oral and facial function and aesthetics. It is the combined knowledge and implementation of neuromuscular orthodontics and aesthetic and restorative dentistry.\n\nAs we age our teeth wear down and this can make our face look old prematurely. The FED is a pioneering procedure that can create a youthful appearance and delay the onset of wrinkles in the lower one third of the face. The digitally aided treatment plan may involve bite reconstruction and veneers. If you would like to know more about the Face Enhancement Dental procedure and find out if this is the right treatment for you, call 17760666 and ask for a cosmetic consultation today."
+            description: "Face Enhancement Dentistry is a holistic approach to enhancing oral and facial function and aesthetics. It is the combined knowledge and implementation of neuromuscular orthodontics and aesthetic and restorative dentistry.\n\nAs we age our teeth wear down and this can make our face look old prematurely. The FED is a pioneering procedure that can create a youthful appearance and delay the onset of wrinkles in the lower one third of the face. The digitally aided treatment plan may involve bite reconstruction and veneers."
           },
           {
             name: "Veneers",

@@ -98,19 +98,19 @@ const Header = () => {
                               {services.map((service, idx) => {
                                 const isActive = activeServiceIndex === idx;
                                 return (
-                                  <Link
+                                  <button
                                     key={idx}
-                                    to={`/services/${service.slug}`}
-                                    onClick={closeServices}
+                                    type="button"
+                                    onClick={() => setActiveServiceIndex(idx)}
                                     onMouseEnter={() => setActiveServiceIndex(idx)}
-                                    className={`flex items-center justify-between gap-3 px-4 py-3 rounded-2xl cursor-pointer transition-all duration-300 ${isActive
+                                    className={`w-full text-left flex items-center justify-between gap-3 px-4 py-3 rounded-2xl cursor-pointer transition-all duration-300 ${isActive
                                       ? 'bg-white text-heading shadow-lg font-bold translate-x-1'
                                       : 'text-white/80 hover:bg-white/10 hover:text-white'
                                       }`}
                                   >
                                     <span className="font-primary text-base capitalize">{service.title}</span>
                                     <FaChevronRight className={`text-xs transition-transform ${isActive ? 'text-heading translate-x-0.5' : 'text-white/40'}`} />
-                                  </Link>
+                                  </button>
                                 );
                               })}
                             </div>
@@ -139,7 +139,7 @@ const Header = () => {
                                     onClick={closeServices}
                                     className="flex items-center px-4 py-3 bg-white hover:bg-gray-200/80 rounded-2xl border border-gray-200/80 hover:border-gray-300 hover:shadow-xs transition-all duration-200 group"
                                   >
-                                    <span className="font-primary text-xs sm:text-sm font-medium text-heading block group-hover:text-black transition-colors leading-tight">
+                                    <span className="font-primary text-xs sm:text-sm font-medium text-heading block group-hover:text-brand-accent transition-colors leading-tight">
                                       {subService.name}
                                     </span>
                                   </Link>
@@ -239,14 +239,6 @@ const Header = () => {
             <div className="bg-heading p-2 sm:p-2.5 rounded-2xl mb-2.5 shadow-md">
               <div className="text-[10px] sm:text-[11px] uppercase tracking-wider text-white/60 font-semibold px-2 pb-1.5 flex items-center justify-between">
                 <span>Select Department</span>
-                <Link
-                  to={`/services/${activeMobileService?.slug}`}
-                  onClick={() => setIsMobileServicesOpen(false)}
-                  className="text-white hover:text-white/80 underline font-normal normal-case text-xs flex items-center gap-1"
-                >
-                  <span>Explore {activeMobileService?.title}</span>
-                  <FaChevronRight className="text-[9px]" />
-                </Link>
               </div>
 
               <div className="grid grid-cols-2 gap-1.5 sm:gap-2">
@@ -293,7 +285,7 @@ const Header = () => {
                       onClick={() => setIsMobileServicesOpen(false)}
                       className="flex items-center px-3.5 py-2.5 bg-white hover:bg-gray-200/80 active:bg-gray-200 rounded-xl border border-gray-200/70 hover:border-gray-300 transition-all duration-200 group"
                     >
-                      <span className="font-primary text-xs font-medium text-heading block group-hover:text-black transition-colors leading-snug">
+                      <span className="font-primary text-xs font-medium text-heading block group-hover:text-brand-accent transition-colors leading-snug">
                         {subService.name}
                       </span>
                     </Link>
