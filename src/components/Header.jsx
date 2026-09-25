@@ -32,9 +32,28 @@ const Header = () => {
     setIsMobileServicesOpen(false);
   }, [location.pathname, location.key]);
 
+  // Listen for openServicesDropdown event from Footer or other components
+  useEffect(() => {
+    const handleOpenServices = (e) => {
+      const idx = typeof e.detail?.index === 'number' ? e.detail.index : 0;
+      setActiveServiceIndex(idx);
+      setActiveMobileServiceIndex(idx);
+      setIsServicesOpen(true);
+      setIsMobileServicesOpen(true);
+    };
+
+    window.addEventListener("openServicesDropdown", handleOpenServices);
+    return () => {
+      window.removeEventListener("openServicesDropdown", handleOpenServices);
+    };
+  }, []);
+
   // Close dropdowns when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
+      if (event.target && event.target.closest && event.target.closest('[data-services-trigger]')) {
+        return;
+      }
       if (headerRef.current && !headerRef.current.contains(event.target)) {
         setIsServicesOpen(false);
         setIsMobileServicesOpen(false);
@@ -76,6 +95,7 @@ const Header = () => {
                 >
                   <button
                     type="button"
+                    onClick={() => setIsServicesOpen(prev => !prev)}
                     className={`px-4 py-2 rounded-full font-medium text-sm transition-all duration-300 flex items-center gap-1 cursor-pointer ${location.pathname.startsWith("/services")
                       ? "bg-heading text-white"
                       : "text-body hover:bg-gray-100 hover:text-heading"

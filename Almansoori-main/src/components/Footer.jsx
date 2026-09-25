@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaFacebookF, FaInstagram, FaGoogle, FaPhone, FaMapMarkerAlt, FaEnvelope, FaClock, FaWhatsapp } from 'react-icons/fa';
 import Brand, { BrandText } from './Brand';
+import { services } from '../data/services';
 
 const Footer = () => {
   const [email, setEmail] = useState('');
@@ -12,19 +13,21 @@ const Footer = () => {
     setEmail('');
   };
 
+  const handleServiceClick = (e, index) => {
+    e.preventDefault();
+    e.stopPropagation();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.dispatchEvent(new CustomEvent('openServicesDropdown', { detail: { index } }));
+    setTimeout(() => {
+      window.dispatchEvent(new CustomEvent('openServicesDropdown', { detail: { index } }));
+    }, 150);
+  };
+
   const quickLinks = [
     { name: 'Home', path: '/' },
     { name: 'About Us', path: '/about' },
     { name: 'Packages', path: '/offers' },
     { name: 'Contact', path: '/contact' },
-  ];
-
-  const services = [
-    { name: 'Dental Care', path: '/services/dental' },
-    { name: 'Hydrafacial', path: '/services/skincare/hydrafacial' },
-    { name: 'Laser Treatment', path: '/services/skincare/laser-hair-removal' },
-    { name: 'Dermatology', path: '/services/aesthetics/chemical-peeling' },
-    { name: 'RF Treatment', path: '/services/aesthetics/rf-microneedling' },
   ];
 
   const socialLinks = [
@@ -101,12 +104,14 @@ const Footer = () => {
               <ul className="space-y-3">
                 {services.map((service, index) => (
                   <li key={index}>
-                    <Link
-                      to={service.path}
-                      className="text-white/70 hover:text-white transition-colors block group"
+                    <button
+                      type="button"
+                      data-services-trigger="true"
+                      onClick={(e) => handleServiceClick(e, index)}
+                      className="text-white/70 hover:text-white transition-colors block text-left cursor-pointer group"
                     >
-                      {service.name}
-                    </Link>
+                      <span className="group-hover:translate-x-1 inline-block transition-transform">{service.title}</span>
+                    </button>
                   </li>
                 ))}
               </ul>

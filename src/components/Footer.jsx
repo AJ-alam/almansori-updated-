@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaFacebookF, FaInstagram, FaPhone, FaMapMarkerAlt, FaEnvelope, FaClock, FaWhatsapp } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram, FaGoogle, FaPhone, FaMapMarkerAlt, FaEnvelope, FaClock, FaWhatsapp } from 'react-icons/fa';
 import Brand, { BrandText } from './Brand';
+import { services } from '../data/services';
 
 const Footer = () => {
   const [email, setEmail] = useState('');
@@ -12,24 +13,27 @@ const Footer = () => {
     setEmail('');
   };
 
+  const handleServiceClick = (e, index) => {
+    e.preventDefault();
+    e.stopPropagation();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.dispatchEvent(new CustomEvent('openServicesDropdown', { detail: { index } }));
+    setTimeout(() => {
+      window.dispatchEvent(new CustomEvent('openServicesDropdown', { detail: { index } }));
+    }, 150);
+  };
+
   const quickLinks = [
     { name: 'Home', path: '/' },
     { name: 'About Us', path: '/about' },
-    { name: 'Services', path: '/services/dental' },
+    { name: 'Packages', path: '/offers' },
     { name: 'Contact', path: '/contact' },
-  ];
-
-  const services = [
-    { name: 'Dental Care', path: '/services/dental' },
-    { name: 'Hydrafacial', path: '/services/skincare/hydrafacial' },
-    { name: 'Laser Treatment', path: '/services/skincare/laser-hair-removal' },
-    { name: 'Dermatology', path: '/services/aesthetics/chemical-peeling' },
-    { name: 'RF Treatment', path: '/services/aesthetics/rf-microneedling' },
   ];
 
   const socialLinks = [
     { icon: FaFacebookF, href: 'https://www.facebook.com/almansooridentalcentre/', label: 'Facebook' },
     { icon: FaInstagram, href: 'https://www.instagram.com/almansoorimedical/?hl=en', label: 'Instagram' },
+    { icon: FaGoogle, href: 'https://www.google.com/search?q=AlMansoori+Medical+Bahrain', label: 'Google' },
   ];
 
   const mapUrl = 'https://www.bing.com/maps/search?q=Bldg+No+1267%2C+Road+1319%2C+Block+913+-+East+Riffa%2C+Kingdom+Of+Bahrain&cp=26.131527~50.550343&lvl=21';
@@ -79,7 +83,7 @@ const Footer = () => {
 
             {/* Quick Links */}
             <div>
-              <h4 className="font-primary text-xl text-white mb-4">Quick Links</h4>
+              <h4 className="font-primary text-lg md:text-xl text-white mb-4 font-bold">Quick Links</h4>
               <ul className="space-y-3">
                 {quickLinks.map((link, index) => (
                   <li key={index}>
@@ -96,16 +100,18 @@ const Footer = () => {
 
             {/* Services */}
             <div>
-              <h4 className="font-primary text-xl text-white mb-4">Our Services</h4>
+              <h4 className="font-primary text-lg md:text-xl text-white mb-4 font-bold">Our Services</h4>
               <ul className="space-y-3">
                 {services.map((service, index) => (
                   <li key={index}>
-                    <Link
-                      to={service.path}
-                      className="text-white/70 hover:text-white transition-colors block group"
+                    <button
+                      type="button"
+                      data-services-trigger="true"
+                      onClick={(e) => handleServiceClick(e, index)}
+                      className="text-white/70 hover:text-white transition-colors block text-left cursor-pointer group"
                     >
-                      {service.name}
-                    </Link>
+                      <span className="group-hover:translate-x-1 inline-block transition-transform">{service.title}</span>
+                    </button>
                   </li>
                 ))}
               </ul>
@@ -113,7 +119,7 @@ const Footer = () => {
 
             {/* Contact Info */}
             <div>
-              <h4 className="font-primary text-xl text-white mb-4">Contact Us</h4>
+              <h4 className="font-primary text-lg md:text-xl text-white mb-4 font-bold">Contact Us</h4>
               <ul className="space-y-3">
                 <li>
                   <a href="tel:+97317760666" className="flex items-start gap-4 text-white/70 hover:text-white transition-colors group">
