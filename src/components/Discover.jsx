@@ -40,31 +40,29 @@ const Discover = () => {
   ];
 
   return (
-    <section className="w-full py-10 md:py-14 px-4 md:px-9 bg-white">
-      {/* Section Header */}
-      <div className="text-center mb-10">
-        <h2 className="section-heading mb-4">Meet The Owners</h2>
-      </div>
+    <div className="w-full space-y-0">
+      {/* Section 1: Dr. Aysha AlMansoori with Section Heading */}
+      <section className="w-full pt-8 md:pt-12 pb-12 md:pb-16 px-4 md:px-9 bg-white">
+        <div className="max-w-6xl mx-auto">
+          {/* Section Header */}
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="section-heading mb-2">
+              Meet The Owners
+            </h2>
+          </div>
 
-      {/* Doctors - Stacked Layout */}
-      <div className="space-y-14 max-w-6xl mx-auto">
-        {doctors.map((doc, idx) => (
-          <div
-            key={idx}
-            className={`flex flex-col ${idx % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 lg:gap-14 items-center`}
-          >
-            {/* Image */}
-            <div className="w-full max-w-md lg:max-w-none lg:w-2/5 mx-auto">
+          {/* Dr. Aysha Profile */}
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-14 items-center">
+            {/* Image - reduced size for clean in-view fitting */}
+            <div className="w-full max-w-[280px] sm:max-w-[320px] lg:max-w-[350px] shrink-0 mx-auto lg:mx-0">
               <div className="relative">
-                {/* Decorative background - using gray tones */}
-                <div className={`absolute -inset-4 bg-gray-200 rounded-[2rem] ${idx % 2 === 0 ? 'rotate-3' : '-rotate-3'}`}></div>
-                <div className={`absolute -inset-4 bg-gray-300 rounded-[2rem] ${idx % 2 === 0 ? '-rotate-2' : 'rotate-2'} opacity-60`}></div>
+                <div className="absolute -inset-3 bg-gray-200 rounded-[2rem] rotate-3"></div>
+                <div className="absolute -inset-3 bg-gray-300 rounded-[2rem] -rotate-2 opacity-60"></div>
 
-                {/* Main image */}
-                <div className="relative rounded-[2rem] overflow-hidden aspect-[3/4] shadow-2xl border-4 border-white">
+                <div className="relative rounded-[2rem] overflow-hidden aspect-[4/5] shadow-xl border-4 border-white">
                   <img
-                    src={doc.image}
-                    alt={doc.name}
+                    src={doctors[0].image}
+                    alt={doctors[0].name}
                     className="w-full h-full object-cover object-top"
                   />
                 </div>
@@ -72,38 +70,31 @@ const Discover = () => {
             </div>
 
             {/* Content */}
-            <div className="w-full lg:w-3/5">
-              {/* Title & Name */}
+            <div className="flex-1 min-w-0">
               <div className="mb-4">
-                <span className="inline-block bg-gray-100 text-heading px-4 py-1.5 rounded-full text-sm font-medium mb-3">
-                  {doc.title}
+                <span className="inline-block font-primary bg-gray-100 text-heading px-4 py-1 rounded-full text-sm font-bold mb-1">
+                  {doctors[0].title}
                 </span>
                 <h3 className="font-primary text-3xl md:text-4xl lg:text-5xl text-heading leading-tight">
-                  <BrandText>{doc.name}</BrandText>
+                  <BrandText>{doctors[0].name}</BrandText>
                 </h3>
-                <p className="text-body font-medium mt-2">{doc.credentials}</p>
+                <p className="text-body text-sm md:text-base font-medium mt-1.5">{doctors[0].credentials}</p>
               </div>
 
-              {/* Bio paragraphs */}
               <div className="space-y-3 mb-6">
-                {doc.bio.map((p, i) => {
-                  const isQuote = p.startsWith('"');
-
-                  return (
-                    <p
-                      key={i}
-                      className={`text-body leading-relaxed ${isQuote ? 'italic border-l-4 border-gray-300 pl-4 text-heading' : ''}`}
-                    >
-                      <BrandText>{p}</BrandText>
-                    </p>
-                  );
-                })}
+                {doctors[0].bio.map((p, i) => (
+                  <p
+                    key={i}
+                    className="text-body text-sm md:text-base leading-relaxed"
+                  >
+                    <BrandText>{p}</BrandText>
+                  </p>
+                ))}
               </div>
 
-              {/* Stats */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                {doc.stats.map((stat, i) => (
-                  <div key={i} className="bg-gray-50 rounded-2xl p-4 text-center hover:bg-gray-100 hover:shadow-md transition-all border border-gray-100">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3.5">
+                {doctors[0].stats.map((stat, i) => (
+                  <div key={i} className="bg-white rounded-2xl p-3.5 text-center hover:bg-gray-100 hover:shadow-md transition-all border border-gray-200/80">
                     <div className="font-primary text-2xl lg:text-3xl text-heading mb-1">{stat.value}</div>
                     <p className="text-body text-xs font-medium uppercase tracking-wide">{stat.label}</p>
                   </div>
@@ -111,9 +102,68 @@ const Discover = () => {
               </div>
             </div>
           </div>
-        ))}
-      </div>
-    </section>
+        </div>
+      </section>
+
+      {/* Section 2: Dr. Aziza Yaser in a separate section */}
+      <section className="w-full py-12 md:py-16 px-4 md:px-9 bg-gray-50/80 border-t border-gray-200/80">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col lg:flex-row-reverse gap-8 lg:gap-14 items-center">
+            {/* Image - reduced size */}
+            <div className="w-full max-w-[280px] sm:max-w-[320px] lg:max-w-[350px] shrink-0 mx-auto lg:mx-0">
+              <div className="relative">
+                <div className="absolute -inset-3 bg-gray-200 rounded-[2rem] -rotate-3"></div>
+                <div className="absolute -inset-3 bg-gray-300 rounded-[2rem] rotate-2 opacity-60"></div>
+
+                <div className="relative rounded-[2rem] overflow-hidden aspect-[4/5] shadow-xl border-4 border-white">
+                  <img
+                    src={doctors[1].image}
+                    alt={doctors[1].name}
+                    className="w-full h-full object-cover object-top"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Content */}
+            <div className="flex-1 min-w-0">
+              <div className="mb-4">
+                <span className="inline-block font-primary bg-gray-100 text-heading px-4 py-1 rounded-full text-sm font-bold mb-1">
+                  {doctors[1].title}
+                </span>
+                <h3 className="font-primary text-3xl md:text-4xl lg:text-5xl text-heading leading-tight">
+                  <BrandText>{doctors[1].name}</BrandText>
+                </h3>
+                <p className="text-body text-sm md:text-base font-medium mt-1.5">{doctors[1].credentials}</p>
+              </div>
+
+              <div className="space-y-3 mb-6">
+                {doctors[1].bio.map((p, i) => {
+                  const isQuote = p.startsWith('"');
+                  return (
+                    <p
+                      key={i}
+                      className={`text-body text-sm md:text-base leading-relaxed ${isQuote ? 'italic border-l-4 border-gray-300 pl-4 text-heading' : ''}`}
+                    >
+                      <BrandText>{p}</BrandText>
+                    </p>
+                  );
+                })}
+              </div>
+
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3.5">
+                {doctors[1].stats.map((stat, i) => (
+                  <div key={i} className="bg-white rounded-2xl p-3.5 text-center hover:bg-gray-100 hover:shadow-md transition-all border border-gray-200/80">
+                    <div className="font-primary text-2xl lg:text-3xl text-heading mb-1">{stat.value}</div>
+                    <p className="text-body text-xs font-medium uppercase tracking-wide">{stat.label}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   );
 };
 

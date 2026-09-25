@@ -41,78 +41,128 @@ const Discover = () => {
 
   return (
     <div className="w-full space-y-0">
-      {/* Section Header */}
-      <div className="bg-white pt-24 md:pt-32 lg:pt-36 pb-4 md:pb-6 text-center">
-        <h2 className="font-primary text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-heading leading-tight">
-          Meet The Owners
-        </h2>
-      </div>
+      {/* Section 1: Dr. Aysha AlMansoori with Section Heading */}
+      <section className="w-full pt-8 md:pt-12 pb-12 md:pb-16 px-4 md:px-9 bg-white">
+        <div className="max-w-6xl mx-auto">
+          {/* Section Header */}
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="section-heading mb-2">
+              Meet The Owners
+            </h2>
+          </div>
 
-      {doctors.map((doc, idx) => (
-        <section
-          key={idx}
-          className={`w-full ${idx === 0 ? 'pt-6 pb-12 md:pt-8 md:pb-16' : 'py-12 md:py-16'} px-4 md:px-9 ${idx % 2 === 0 ? 'bg-white' : 'bg-gray-50/80 border-t border-gray-200/80'}`}
-        >
-          <div className="max-w-6xl mx-auto">
-            <div
-              className={`flex flex-col ${idx % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 lg:gap-14 items-center`}
-            >
-              {/* Image */}
-              <div className="w-full max-w-md lg:max-w-none lg:w-2/5 mx-auto">
-                <div className="relative">
-                  <div className={`absolute -inset-4 bg-gray-200 rounded-[2rem] ${idx % 2 === 0 ? 'rotate-3' : '-rotate-3'}`}></div>
-                  <div className={`absolute -inset-4 bg-gray-300 rounded-[2rem] ${idx % 2 === 0 ? '-rotate-2' : 'rotate-2'} opacity-60`}></div>
+          {/* Dr. Aysha Profile */}
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-14 items-center">
+            {/* Image - reduced size for clean in-view fitting */}
+            <div className="w-full max-w-[280px] sm:max-w-[320px] lg:max-w-[350px] shrink-0 mx-auto lg:mx-0">
+              <div className="relative">
+                <div className="absolute -inset-3 bg-gray-200 rounded-[2rem] rotate-3"></div>
+                <div className="absolute -inset-3 bg-gray-300 rounded-[2rem] -rotate-2 opacity-60"></div>
 
-                  <div className="relative rounded-[2rem] overflow-hidden aspect-[3/4] shadow-2xl border-4 border-white">
-                    <img
-                      src={doc.image}
-                      alt={doc.name}
-                      className="w-full h-full object-cover object-top"
-                    />
-                  </div>
-                </div>
-              </div>
-
-              {/* Content */}
-              <div className="w-full lg:w-3/5">
-                <div className="mb-4">
-                  <span className="inline-block font-primary bg-gray-100 text-heading px-4 py-1 rounded-full text-sm font-bold mb-1">
-                    {doc.title}
-                  </span>
-                  <h3 className="font-primary text-3xl md:text-4xl lg:text-5xl text-heading leading-tight">
-                    {doc.name}
-                  </h3>
-                  <p className="text-body text-sm md:text-base font-medium mt-2">{doc.credentials}</p>
-                </div>
-
-                <div className="space-y-3 mb-6">
-                  {doc.bio.map((p, i) => {
-                    const isQuote = p.startsWith('"');
-
-                    return (
-                      <p
-                        key={i}
-                        className={`text-body text-sm md:text-base leading-relaxed ${isQuote ? 'italic border-l-4 border-gray-300 pl-4 text-heading' : ''}`}
-                      >
-                        <BrandText>{p}</BrandText>
-                      </p>
-                    );
-                  })}
-                </div>
-
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                  {doc.stats.map((stat, i) => (
-                    <div key={i} className="bg-white rounded-2xl p-4 text-center hover:bg-gray-100 hover:shadow-md transition-all border border-gray-200/80">
-                      <div className="font-primary text-2xl lg:text-3xl text-heading mb-1">{stat.value}</div>
-                      <p className="text-body text-xs font-medium uppercase tracking-wide">{stat.label}</p>
-                    </div>
-                  ))}
+                <div className="relative rounded-[2rem] overflow-hidden aspect-[4/5] shadow-xl border-4 border-white">
+                  <img
+                    src={doctors[0].image}
+                    alt={doctors[0].name}
+                    className="w-full h-full object-cover object-top"
+                  />
                 </div>
               </div>
             </div>
+
+            {/* Content */}
+            <div className="flex-1 min-w-0">
+              <div className="mb-4">
+                <span className="inline-block font-primary bg-gray-100 text-heading px-4 py-1 rounded-full text-sm font-bold mb-1">
+                  {doctors[0].title}
+                </span>
+                <h3 className="font-primary text-3xl md:text-4xl lg:text-5xl text-heading leading-tight">
+                  {doctors[0].name}
+                </h3>
+                <p className="text-body text-sm md:text-base font-medium mt-1.5">{doctors[0].credentials}</p>
+              </div>
+
+              <div className="space-y-3 mb-6">
+                {doctors[0].bio.map((p, i) => (
+                  <p
+                    key={i}
+                    className="text-body text-sm md:text-base leading-relaxed"
+                  >
+                    <BrandText>{p}</BrandText>
+                  </p>
+                ))}
+              </div>
+
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3.5">
+                {doctors[0].stats.map((stat, i) => (
+                  <div key={i} className="bg-white rounded-2xl p-3.5 text-center hover:bg-gray-100 hover:shadow-md transition-all border border-gray-200/80">
+                    <div className="font-primary text-2xl lg:text-3xl text-heading mb-1">{stat.value}</div>
+                    <p className="text-body text-xs font-medium uppercase tracking-wide">{stat.label}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-        </section>
-      ))}
+        </div>
+      </section>
+
+      {/* Section 2: Dr. Aziza Yaser in a separate section */}
+      <section className="w-full py-12 md:py-16 px-4 md:px-9 bg-gray-50/80 border-t border-gray-200/80">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col lg:flex-row-reverse gap-8 lg:gap-14 items-center">
+            {/* Image - reduced size */}
+            <div className="w-full max-w-[280px] sm:max-w-[320px] lg:max-w-[350px] shrink-0 mx-auto lg:mx-0">
+              <div className="relative">
+                <div className="absolute -inset-3 bg-gray-200 rounded-[2rem] -rotate-3"></div>
+                <div className="absolute -inset-3 bg-gray-300 rounded-[2rem] rotate-2 opacity-60"></div>
+
+                <div className="relative rounded-[2rem] overflow-hidden aspect-[4/5] shadow-xl border-4 border-white">
+                  <img
+                    src={doctors[1].image}
+                    alt={doctors[1].name}
+                    className="w-full h-full object-cover object-top"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Content */}
+            <div className="flex-1 min-w-0">
+              <div className="mb-4">
+                <span className="inline-block font-primary bg-gray-100 text-heading px-4 py-1 rounded-full text-sm font-bold mb-1">
+                  {doctors[1].title}
+                </span>
+                <h3 className="font-primary text-3xl md:text-4xl lg:text-5xl text-heading leading-tight">
+                  {doctors[1].name}
+                </h3>
+                <p className="text-body text-sm md:text-base font-medium mt-1.5">{doctors[1].credentials}</p>
+              </div>
+
+              <div className="space-y-3 mb-6">
+                {doctors[1].bio.map((p, i) => {
+                  const isQuote = p.startsWith('"');
+                  return (
+                    <p
+                      key={i}
+                      className={`text-body text-sm md:text-base leading-relaxed ${isQuote ? 'italic border-l-4 border-gray-300 pl-4 text-heading' : ''}`}
+                    >
+                      <BrandText>{p}</BrandText>
+                    </p>
+                  );
+                })}
+              </div>
+
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3.5">
+                {doctors[1].stats.map((stat, i) => (
+                  <div key={i} className="bg-white rounded-2xl p-3.5 text-center hover:bg-gray-100 hover:shadow-md transition-all border border-gray-200/80">
+                    <div className="font-primary text-2xl lg:text-3xl text-heading mb-1">{stat.value}</div>
+                    <p className="text-body text-xs font-medium uppercase tracking-wide">{stat.label}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
