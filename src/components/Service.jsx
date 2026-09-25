@@ -1,5 +1,4 @@
 import React, { useState, useRef } from "react";
-import { FaArrowRight, FaChevronDown } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
 const Service = ({ headerImage, title, desc, slug, subServices, isExpanded, onToggle }) => {
@@ -64,9 +63,6 @@ const Service = ({ headerImage, title, desc, slug, subServices, isExpanded, onTo
               <span className={`font-primary text-2xl md:text-3xl transition-colors duration-500 ${isExpanded ? 'text-white' : 'text-heading'}`}>
                 {title}
               </span>
-              {subServices && subServices.length > 0 && (
-                <FaChevronDown className={`text-sm transition-all duration-500 ${isExpanded ? 'rotate-180 text-white/60' : 'text-gray-400'}`} />
-              )}
             </div>
           </div>
 
@@ -76,12 +72,12 @@ const Service = ({ headerImage, title, desc, slug, subServices, isExpanded, onTo
 
           <Link
             to={`/services/${slug}`}
-            className={`w-14 h-14 hidden md:flex rounded-full items-center justify-center transition-all duration-500 ${isExpanded
-              ? 'bg-white text-brand-primary rotate-0'
-              : 'bg-gray-100 text-heading -rotate-45 hover:bg-gray-200'
+            className={`px-5 py-2.5 hidden md:flex rounded-full items-center justify-center transition-all duration-500 font-medium text-sm ${isExpanded
+              ? 'bg-white text-brand-primary'
+              : 'bg-gray-100 text-heading hover:bg-gray-200'
               }`}
           >
-            <FaArrowRight className="text-xl" />
+            <span>View</span>
           </Link>
         </div>
 
@@ -96,14 +92,12 @@ const Service = ({ headerImage, title, desc, slug, subServices, isExpanded, onTo
               {/* Sub-services Grid */}
               <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
                 {subServices.map((sub, index) => {
-                  const SubIcon = sub.icon;
                   return (
                     <Link
                       key={index}
                       to={`/services/${slug}/${sub.slug}`}
-                      className="flex flex-col items-center gap-3 p-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/5 hover:border-white/20 transition-all duration-300 group/item"
+                      className="flex flex-col items-center justify-center p-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/5 hover:border-white/20 transition-all duration-300 group/item"
                     >
-                      <SubIcon className="text-3xl text-white/70 group-hover/item:scale-110 group-hover/item:text-white transition-all duration-300" />
                       <span className="text-white/90 font-medium text-xs md:text-sm text-center transition-colors">
                         {sub.name}
                       </span>
@@ -116,10 +110,9 @@ const Service = ({ headerImage, title, desc, slug, subServices, isExpanded, onTo
               <div className="flex justify-center mt-8 pb-4">
                 <Link
                   to={`/services/${slug}`}
-                  className="inline-flex items-center gap-2 px-8 py-3 bg-white text-brand-primary rounded-full hover:bg-gray-100 transition-all duration-300 font-semibold shadow-lg"
+                  className="inline-flex items-center justify-center px-8 py-3 bg-white text-brand-primary rounded-full hover:bg-gray-100 transition-all duration-300 font-semibold shadow-lg"
                 >
                   <span>View All {title} Treatments</span>
-                  <FaArrowRight className="text-sm" />
                 </Link>
               </div>
             </div>

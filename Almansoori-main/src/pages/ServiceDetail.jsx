@@ -4,7 +4,6 @@ import ExpandableText from "../components/ExpandableText";
 import BulletText from "../components/BulletText";
 import { BrandText } from "../components/Brand";
 import { services } from "../data/services";
-import { FaChevronDown, FaChevronUp } from "react-icons/fa6";
 
 const TreatmentCardItem = ({ treatment, index, isExpanded, onToggle }) => {
     const treatmentId = treatment.name.toLowerCase().includes("fed") 
@@ -61,18 +60,13 @@ const TreatmentCardItem = ({ treatment, index, isExpanded, onToggle }) => {
                         <button
                             type="button"
                             onClick={onToggle}
-                            className={`font-bold text-xs inline-flex items-center gap-1.5 cursor-pointer px-4 py-1.5 rounded-full transition-all border shadow-xs ${
+                            className={`font-bold text-xs inline-flex items-center justify-center cursor-pointer px-4 py-1.5 rounded-full transition-all border shadow-xs ${
                                 isExpanded
                                     ? "bg-white text-heading hover:bg-gray-200 border-gray-300"
                                     : "bg-gray-50 text-heading hover:bg-heading hover:text-white border-gray-200 hover:border-heading"
                             }`}
                         >
                             <span>{isExpanded ? "Show Less" : "Read More"}</span>
-                            {isExpanded ? (
-                                <FaChevronUp className="text-[10px]" />
-                            ) : (
-                                <FaChevronDown className="text-[10px]" />
-                            )}
                         </button>
                     </div>
                 )}
@@ -162,12 +156,7 @@ const ServiceDetail = () => {
                     {/* Hero Section */}
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
                         <div className="space-y-6">
-                            <div className="flex items-start gap-4">
-                                {service.icon && (
-                                    <span className="text-3xl md:text-4xl text-brand-primary mt-1 flex-shrink-0">
-                                        {React.createElement(service.icon)}
-                                    </span>
-                                )}
+                            <div className="flex items-start">
                                 <h1 className="font-primary text-3xl md:text-5xl font-bold text-heading leading-[1.2] md:leading-[1.15]">
                                     {displayTitle}
                                 </h1>

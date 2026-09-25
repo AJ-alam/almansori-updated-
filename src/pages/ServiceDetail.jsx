@@ -69,19 +69,10 @@ const ServiceDetail = () => {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
                         {/* Left - Content */}
                         <div className="space-y-4">
-                            <div className="flex items-center gap-4 mb-2">
-                                <div className="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center">
-                                    {SubIcon ? (
-                                        <SubIcon className="text-3xl text-heading" />
-                                    ) : (
-                                        <Icon className="text-3xl text-heading" />
-                                    )}
-                                </div>
-                                <div>
-                                    <h1 className="font-primary text-3xl md:text-4xl text-heading">
-                                        {displayTitle}
-                                    </h1>
-                                </div>
+                            <div className="mb-2">
+                                <h1 className="font-primary text-3xl md:text-4xl text-heading">
+                                    {displayTitle}
+                                </h1>
                             </div>
 
                             <p className="text-gray-700 text-base leading-snug">
@@ -183,9 +174,6 @@ const ServiceDetail = () => {
                                             className={`bg-white border ${isCurrent ? 'border-heading ring-2 ring-heading shadow-md' : 'border-gray-200/80'} rounded-2xl p-4 hover:shadow-lg hover:border-heading transition-all duration-300 group flex flex-col justify-between h-full`}
                                         >
                                             <div>
-                                                <div className="w-10 h-10 bg-gray-100 rounded-xl flex items-center justify-center mb-3 group-hover:bg-heading group-hover:text-white transition-colors duration-300">
-                                                    <SubServiceIcon className="text-xl text-heading group-hover:text-white transition-colors" />
-                                                </div>
                                                 <h3 className="font-primary text-base font-bold text-heading leading-tight mb-1.5 group-hover:text-brand-primary transition-colors">
                                                     {sub.name}
                                                 </h3>
