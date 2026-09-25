@@ -22,16 +22,16 @@ const AboutSection = () => {
             {/* Qualifications */}
             <div className="space-y-2">
               <p className="text-body text-sm md:text-base leading-snug">
-                <strong>30+ years</strong> of experience in Aesthetic & Restorative Dentistry
+                <strong>30+ years</strong> of experience as Restorative and Aesthetic Specialist
               </p>
               <p className="text-body text-sm md:text-base leading-snug">
                 <strong>Bachelor Degree</strong> from Cairo University (1994)
               </p>
               <p className="text-body text-sm md:text-base leading-snug">
-                <strong>Clinical Master</strong> in Aesthetic and Restorative Dentistry - UCLA (2011)
+                <strong>Clinical Master</strong> in Restorative and Aesthetic Dentistry - UCLA (2011)
               </p>
               <p className="text-body text-sm md:text-base leading-snug">
-                <strong>Master's Degree</strong> in Restorative & Aesthetic Dentistry - Manchester University (2016)
+                <strong>Master's Degree</strong> in Restorative and Aesthetic Dentistry - Manchester University (2016)
               </p>
               <p className="text-body text-sm md:text-base leading-snug">
                 <strong>Certificate in Dental Implant</strong> Since 2000

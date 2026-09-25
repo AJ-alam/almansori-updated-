@@ -29,7 +29,7 @@ const AboutSection = () => {
               <div className="flex items-start gap-2.5">
                 <span className="inline-block w-2 h-2 rounded-full bg-brand-accent mt-1.5 shrink-0" />
                 <p>
-                  <strong className="text-heading font-semibold">30+ years</strong> of experience in Aesthetic & Restorative Dentistry
+                  <strong className="text-heading font-semibold">30+ years</strong> of experience as Restorative and Aesthetic Specialist
                 </p>
               </div>
               <div className="flex items-start gap-2.5">
@@ -41,13 +41,13 @@ const AboutSection = () => {
               <div className="flex items-start gap-2.5">
                 <span className="inline-block w-2 h-2 rounded-full bg-brand-accent mt-1.5 shrink-0" />
                 <p>
-                  <strong className="text-heading font-semibold">Clinical Master</strong> in Aesthetic and Restorative Dentistry - UCLA (2011)
+                  <strong className="text-heading font-semibold">Clinical Master</strong> in Restorative and Aesthetic Dentistry - UCLA (2011)
                 </p>
               </div>
               <div className="flex items-start gap-2.5">
                 <span className="inline-block w-2 h-2 rounded-full bg-brand-accent mt-1.5 shrink-0" />
                 <p>
-                  <strong className="text-heading font-semibold">Master's Degree</strong> in Restorative & Aesthetic Dentistry - Manchester University (2016)
+                  <strong className="text-heading font-semibold">Master's Degree</strong> in Restorative and Aesthetic Dentistry - Manchester University (2016)
                 </p>
               </div>
               <div className="flex items-start gap-2.5">
